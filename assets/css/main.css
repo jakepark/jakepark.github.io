@@ -345,7 +345,8 @@
 	}
 
 	.div-skills {
-		width: 20%;
+		float: left;
+		width: calc(100% * (1/3) - 10px - 1px);
 		clear: none;
 		margin-left: 0;
 	}
@@ -1621,7 +1622,7 @@
 
 
 		.icon.featured {
-			width: 100px;
+			max-width: 100px;
 			margin: 0 auto;
 
 			color: #EA8A95;
@@ -2088,7 +2089,7 @@
 		/* Box */
 
 			.box {
-				padding: 30px 20px 30px 20px;
+				/*padding: 30px 20px 30px 20px;*/
 				margin: 0 0 20px 0 !important;
 			}
 
