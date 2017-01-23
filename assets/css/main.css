@@ -891,6 +891,9 @@
 	}
 
 	@media screen and (max-width: 736px) {
+		.div-projects {
+			width: 100%;
+		}
 
 		.row > * {
 			padding: 15px 0 0 15px;
@@ -2102,11 +2105,11 @@
 				}
 
 				.box .image.featured {
-					position: relative;
+					/*position: relative;
 					left: 20px;
 					top: 20px;
-					margin: -50px 0 50px -40px;
-					width: auto;
+					margin: -50px 0 50px -40px;*/
+					max-width: 500px;
 				}
 
 		/* Wrappers */
