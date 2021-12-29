@@ -344,6 +344,12 @@
 		margin-left: 0;
 	}
 
+  .flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+
 	.div-skills {
 		float: left;
 		width: calc(100% * (1/3) - 10px - 1px);
