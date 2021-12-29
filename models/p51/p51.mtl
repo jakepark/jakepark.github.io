@@ -1,0 +1,59 @@
+newmtl p51d_normalized:pasted__blinn2SG
+illum 4
+Kd 0.33 0.45 0.50
+Ka 0.00 0.00 0.00
+Tf 0.31 0.31 0.31
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl p51d_normalized:pasted__blinn3SG
+illum 4
+Kd 0.15 0.17 0.20
+Ka 0.21 0.21 0.21
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl p51d_normalized:pasted__blinn4SG
+illum 4
+Kd 0.09 0.29 0.20
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl p51d_normalized:pasted__lambert9SG
+illum 4
+Kd 0.36 0.36 0.36
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl p51d_normalized:pasted__lambert11SG
+illum 4
+Kd 0.35 0.22 0.13
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl p51d_normalized:pasted__lambert15SG
+illum 4
+Kd 0.00 0.00 0.41
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl p51d_normalized:pasted__lambert16SG
+illum 4
+Kd 1.00 1.00 1.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl p51d_normalized:pasted__lambert20SG
+illum 4
+Kd 0.22 0.22 0.22
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl p51d_normalized:pasted__phong1SG
+illum 4
+Kd 0.91 0.91 0.91
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.90 0.90 0.90
+Ns 18.00
