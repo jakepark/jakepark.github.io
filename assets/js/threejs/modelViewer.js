@@ -1,8 +1,8 @@
-// var SCREEN_WIDTH = window.innerWidth;
-// var SCREEN_HEIGHT = window.innerHeight;
+var SCREEN_WIDTH = window.innerWidth * 0.5;
+var SCREEN_HEIGHT = window.innerHeight * 0.5;
 
-var SCREEN_WIDTH = 900;
-var SCREEN_HEIGHT = 600;
+// var SCREEN_WIDTH = 900;
+// var SCREEN_HEIGHT = 600;
 
 var container, parent;
 
