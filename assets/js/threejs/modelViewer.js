@@ -78,16 +78,11 @@ function init() {
 	var onError = function ( xhr ) {
 	};
 	THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
-	var loader = new THREE.OBJMTLLoader();
-	loader.load( 'chapters/models/p51/p51.obj', 'chapters/models/p51/p51.mtl', function ( object ) {
+  var loader = new THREE.OBJMTLLoader();
+	loader.load( 'assets/models/p51/p51.obj', 'assets/models/p51/p51.mtl', function ( object ) {
 		object.position.y = 0;
 		scene.add( object );
 	}, onProgress, onError );
-
-	// var loader = new THREE.JSONLoader(),
-	//
-	// callbackKey = function(geometry, materials) {createScene(geometry, materials, 0, 0, 0, 15 )};
-	// loader.load("chapters/models/p51/p51.js", callbackKey);
 
 	window.addEventListener('resize', onWindowResize, false);
 
