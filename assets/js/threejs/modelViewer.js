@@ -85,7 +85,11 @@ function init() {
 	}, onProgress, onError );
 
 	window.addEventListener('resize', onWindowResize, false);
+	container.addEventListener('click', onClick);
+}
 
+function onClick() {
+  debugger
 }
 
 function createScene(geometry, materials, x, y, z, scale, tmap) {
