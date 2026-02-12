@@ -34,6 +34,40 @@
     <script src="assets/js/threejs/TrackballControls.js"></script>
     
     
+		<style>
+			/* Base Desktop Styling */
+			#three-container {
+				height: 350px;
+				width: 100%;
+				overflow: hidden;
+				margin-top: -100px; /* Pulls it up slightly into the header area on desktop */
+				z-index: 1;
+			}
+
+			.hero-content {
+				position: relative;
+				z-index: 10; /* Ensures text and LinkedIn button stay clickable */
+			}
+
+			/* Mobile Fixes */
+			@media screen and (max-width: 736px) {
+				#three-container {
+					margin-top: 20px !important; /* Pushes the plane BELOW the text */
+					height: 250px;
+					order: 2; /* Ensures it sits below the text in the flex flow */
+				}
+				
+				.hero-content {
+					order: 1;
+					text-align: center;
+				}
+
+				header {
+					text-align: center;
+				}
+			}
+		</style>
+
 	</head>
 	<body>
 
@@ -55,22 +89,22 @@
                 <span class="image fit"><img src="images/jp-headshot.jpg" alt="" /></span>
             </div>
             <div class="8u 12u(mobile)">
-                <header>
-                    <h1><strong>Jake Park</strong></h1>
-                    <h3>Creative Technologist</h3>
-                </header>
-                <div class="row">
-                    <div class="7u 12u(mobile)">
-                        <p>From rebuilding my motorcycle engine to designing and working in 3D creative tools, I build software with a mechanical engineer's precision.</p>
-                        <footer>
-                            <a href="https://www.linkedin.com/in/parkjake" class="button big scrolly">> Linked In</a>
-                        </footer>
-                    </div>
-                    <div class="5u 12u(mobile)">
-                        <div id="three-container" style="height: 250px; width: 100%; overflow: hidden; margin-top: -150px;"></div>
-                    </div>
-                </div>
-            </div>
+							<header>
+									<h1><strong>Jake Park</strong></h1>
+									<h3>Creative Technologist</h3>
+							</header>
+							<div class="row">
+									<div class="7u 12u(mobile) hero-content">
+											<p>From rebuilding my motorcycle engine to designing and working in 3D creative tools, I build software with a mechanical engineer's precision.</p>
+											<footer>
+													<a href="https://www.linkedin.com/in/parkjake" class="button big scrolly">> Linked In</a>
+											</footer>
+									</div>
+									<div class="5u 12u(mobile)">
+											<div id="three-container" class="plane-canvas"></div>
+									</div>
+							</div>
+					</div>
         </div>
     </article>
 </div>
