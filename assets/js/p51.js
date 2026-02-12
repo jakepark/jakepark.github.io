@@ -58,7 +58,19 @@ function onP51WindowResize() {
 
 function animateP51() {
     requestAnimationFrame(animateP51);
-    if (p51_controls) p51_controls.update(p51_clock.getDelta());
+    
+    var delta = p51_clock.getDelta();
+
+    // 1. Update the manual controls
+    if (p51_controls) {
+        p51_controls.update(delta);
+    }
+
+    // 2. Add the Auto-Rotation
+    // We rotate the whole scene so all lights and the model move together,
+    // or you can target the specific object if you saved it to a variable.
+    p51_scene.rotation.y += 0.005; // Adjust this number to change speed
+
     renderP51();
 }
 
