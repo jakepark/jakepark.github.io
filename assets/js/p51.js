@@ -40,6 +40,7 @@ function initP51() {
         'assets/models/p51/p51.mtl', 
         function (object) {
             object.position.y = 0;
+            object.scale.set(1.45, 1.45, 1.45);
             p51_scene.add(object);
         }
     );
