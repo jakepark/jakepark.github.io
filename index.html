@@ -26,6 +26,14 @@
 		  ga('send', 'pageview');
 
 		</script>
+
+		<script src="assets/js/threejs/three.min.js"></script>
+    <script src="assets/js/threejs/DDSLoader.js"></script>
+    <script src="assets/js/threejs/MTLLoader.js"></script>
+    <script src="assets/js/threejs/OBJMTLLoader.js"></script>
+    <script src="assets/js/threejs/TrackballControls.js"></script>
+    
+    
 	</head>
 	<body>
 
@@ -40,32 +48,32 @@
 			</nav>
 
 		<!-- Home -->
-			<div class="wrapper style1 first">
-				<article class="container" id="top">
-					<div class="row">
-						<div class="4u 12u(mobile)">
-              <span class="image fit"><img src="images/jp-headshot.jpg" alt="📷: westcahall.com" /></span>
-						</div>
-						<div class="8u 12u(mobile)">
-							<header>
-								<h1><strong>Jake Park</strong></h1>
-								<h3>Solutions Developer</h3>
-							</header>
-							<p>
-                I am a full stack application developer.
-                
-                I went to Columbia University and graduated as a mechanical engineer.
-                I particularly enjoyed working with my hands in the machine shop, applying
-                theory to producing tangible work pieces. I've always loved
-                researching, building, and sharing solutions.
-              </p>
-              <footer>
-                <a href="https://www.linkedin.com/in/parkjake" class="button big scrolly">> Linked In</a>
-              </footer>
-						</div>
-					</div>
-				</article>
-			</div>
+			div class="wrapper style1 first">
+    <article class="container" id="top">
+        <div class="row">
+            <div class="4u 12u(mobile)">
+                <span class="image fit"><img src="images/jp-headshot.jpg" alt="" /></span>
+            </div>
+            <div class="8u 12u(mobile)">
+                <header>
+                    <h1><strong>Jake Park</strong></h1>
+                    <h3>Solutions Developer</h3>
+                </header>
+                <div class="row">
+                    <div class="7u 12u(mobile)">
+                        <p>I am a full stack application developer. I graduated from Columbia University as a mechanical engineer, and loved designing 3D models, machining parts by hand, and integrating complete solutions.</p>
+                        <footer>
+                            <a href="https://www.linkedin.com/in/parkjake" class="button big scrolly">> Linked In</a>
+                        </footer>
+                    </div>
+                    <div class="5u 12u(mobile)">
+                        <div id="three-container" style="height: 250px; width: 100%; overflow: hidden;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
 
 		<!-- Portfolio -->
 			<div class="wrapper style3">
@@ -267,12 +275,21 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/threejs/three.min.js"></script>
+
+			<script src="assets/js/threejs/DDSLoader.js"></script>
+			<script src="assets/js/threejs/MTLLoader.js"></script>
+			<script src="assets/js/threejs/OBJMTLLoader.js"></script>
+			<script src="assets/js/threejs/TrackballControls.js"></script>
+
+			<script src="assets/js/p51.js"></script>
+
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/skel-viewport.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
+			
 	</body>
 </html>
