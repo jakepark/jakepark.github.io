@@ -40,7 +40,7 @@ function initP51() {
         'assets/models/p51/p51.mtl', 
         function (object) {
             object.position.y = 0;
-            object.scale.set(1.45, 1.45, 1.45);
+            object.scale.set(1.0, 1.0, 1.0);
             p51_scene.add(object);
         }
     );
@@ -66,10 +66,10 @@ function animateP51() {
         p51_controls.update(delta);
     }
 
-    // 2. Add the Auto-Rotation
-    // We rotate the whole scene so all lights and the model move together,
-    // or you can target the specific object if you saved it to a variable.
-    p51_scene.rotation.y += 0.005; // Adjust this number to change speed
+    // // 2. Add the Auto-Rotation
+    // // We rotate the whole scene so all lights and the model move together,
+    // // or you can target the specific object if you saved it to a variable.
+    // p51_scene.rotation.y += 0.005; // Adjust this number to change speed
 
     renderP51();
 }

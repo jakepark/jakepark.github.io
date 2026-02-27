@@ -2,7 +2,9 @@
 
 1. run local server in project root
 
-http-server . -p 8000
+python -m http.server
+
+(deprecated) http-server . -p 8000
 
 2. visit localhost:8000
 
