@@ -51,23 +51,25 @@
 
 			/* Mobile Fixes */
 			@media screen and (max-width: 736px) {
-				/* Target the row containing hero text and canvas */
-				#top .row:last-child {
+				/* Target the row specifically within the #top article */
+				#top .row {
 					display: flex;
 					flex-direction: column;
 				}
 
-				.hero-content {
+				/* Target the text block using its ID or specific combination */
+				#top .hero-content {
 					order: 1;
 					text-align: center;
-					width: 100% !important;
+					width: 100%;
 				}
 
-				#three-container {
+				/* Target the canvas container using its ID */
+				#top #three-container {
 					order: 2;
-					margin-top: 20px !important;
+					margin-top: 20px;
 					height: 250px;
-					width: 100% !important;
+					width: 100%;
 				}
 				
 				header {
@@ -110,6 +112,9 @@
 									</div>
 									<div class="5u 12u(mobile)">
 											<div id="three-container" class="plane-canvas"></div>
+											<p style="font-size: 0.7em; text-align: center; color: #888; margin-top: -10px;">
+												P-51D Model © Jake Park 2006
+											</p>
 									</div>
 							</div>
 					</div>
