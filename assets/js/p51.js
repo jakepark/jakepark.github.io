@@ -59,6 +59,9 @@ function initP51() {
             object.position.y = 0;
             object.scale.set(1.0, 1.0, 1.0);
             p51_scene.add(object);
+
+            // This removes the static image and fades in the 3D canvas
+            document.getElementById('three-container').classList.add('model-loaded');
         }
     );
 

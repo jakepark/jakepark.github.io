@@ -39,11 +39,23 @@
 			#three-container {
 				height: 350px;
 				width: 100%;
+				/* Set your screenshot as the initial placeholder */
+				background: url('../images/p51.png') no-repeat center center;
+				background-size: contain;
+				transition: opacity 0.5s ease-in;
+				/* Hide the canvas while loading */
+				opacity: 0;
 				overflow: hidden;
 				margin-top: -100px;
 				z-index: 1;
 			}
 
+			/* Class applied by JS once the model is ready */
+			#three-container.model-loaded {
+					background: none; /* Removes the static image */
+					opacity: 1;       /* Fades in the 3D model */
+			}
+			
 			.hero-content {
 				position: relative;
 				z-index: 10;
