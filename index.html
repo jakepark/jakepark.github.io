@@ -40,28 +40,36 @@
 				height: 350px;
 				width: 100%;
 				overflow: hidden;
-				margin-top: -100px; /* Pulls it up slightly into the header area on desktop */
+				margin-top: -100px;
 				z-index: 1;
 			}
 
 			.hero-content {
 				position: relative;
-				z-index: 10; /* Ensures text and LinkedIn button stay clickable */
+				z-index: 10;
 			}
 
 			/* Mobile Fixes */
 			@media screen and (max-width: 736px) {
-				#three-container {
-					margin-top: 20px !important; /* Pushes the plane BELOW the text */
-					height: 250px;
-					order: 2; /* Ensures it sits below the text in the flex flow */
+				/* Target the row containing hero text and canvas */
+				#top .row:last-child {
+					display: flex;
+					flex-direction: column;
 				}
-				
+
 				.hero-content {
 					order: 1;
 					text-align: center;
+					width: 100% !important;
 				}
 
+				#three-container {
+					order: 2;
+					margin-top: 20px !important;
+					height: 250px;
+					width: 100% !important;
+				}
+				
 				header {
 					text-align: center;
 				}
@@ -91,7 +99,7 @@
             <div class="8u 12u(mobile)">
 							<header>
 									<h1><strong>Jake Park</strong></h1>
-									<h3>Creative Technologist</h3>
+									<h3>Software Developer</h3>
 							</header>
 							<div class="row">
 									<div class="7u 12u(mobile) hero-content">
