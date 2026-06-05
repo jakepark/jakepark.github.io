@@ -39,21 +39,29 @@
 			#three-container {
 				height: 350px;
 				width: 100%;
-				/* Set your screenshot as the initial placeholder */
+				/* Keep the background image here */
 				background: url('../images/p51.png') no-repeat center center;
 				background-size: contain;
-				transition: opacity 0.5s ease-in;
-				/* Hide the canvas while loading */
-				opacity: 0;
-				overflow: hidden;
 				margin-top: -100px;
 				z-index: 1;
+				overflow: hidden;
 			}
 
-			/* Class applied by JS once the model is ready */
+			/* Hide the canvas inside until the model is loaded */
+			#three-container canvas {
+				opacity: 0;
+				width: 100% !important;
+		    height: 100% !important;
+				transition: opacity 0.5s ease-in;
+			}
+
+			/* Once loaded, show the canvas and hide the background */
 			#three-container.model-loaded {
-					background: none; /* Removes the static image */
-					opacity: 1;       /* Fades in the 3D model */
+				background: none !important;
+			}
+			
+			#three-container.model-loaded canvas {
+				opacity: 1;
 			}
 			
 			.hero-content {
@@ -63,30 +71,18 @@
 
 			/* Mobile Fixes */
 			@media screen and (max-width: 736px) {
-				/* Target the row specifically within the #top article */
 				#top .row {
 					display: flex;
 					flex-direction: column;
 				}
-
-				/* Target the text block using its ID or specific combination */
-				#top .hero-content {
-					order: 1;
-					text-align: center;
-					width: 100%;
+				#top .hero-content { order: 1; text-align: center; width: 100%; }
+				#top #three-container { 
+					order: 2; 
+					margin-top: 20px; 
+					height: 250px; 
+					width: 100%; 
 				}
-
-				/* Target the canvas container using its ID */
-				#top #three-container {
-					order: 2;
-					margin-top: 20px;
-					height: 250px;
-					width: 100%;
-				}
-				
-				header {
-					text-align: center;
-				}
+				header { text-align: center; }
 			}
 		</style>
 
