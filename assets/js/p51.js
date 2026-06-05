@@ -42,7 +42,11 @@ function initP51() {
                     var wireframeGeom = new THREE.WireframeGeometry(child.geometry);
                     
                     // 2. Set the color to a "Tech Blue" (0x0077ff)
-                    var wireframeMat = new THREE.LineBasicMaterial({ color: 0x0077ff });
+                    var wireframeMat = new THREE.LineBasicMaterial({ 
+                        color: 0x0077ff, 
+                        transparent: true, 
+                        opacity: 0.3 // Adjust from 0.1 (very light) to 1.0 (solid)
+                    });
                     var wireframe = new THREE.LineSegments(wireframeGeom, wireframeMat);
                     
                     // 3. Add the wireframe to the mesh
