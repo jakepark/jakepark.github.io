@@ -38,17 +38,18 @@ function initP51() {
         function (object) {
             object.traverse(function (child) {
                 if (child instanceof THREE.Mesh) {
-                    // Create WireframeGeometry from the object's geometry
+                    // 1. Create the wireframe geometry
                     var wireframeGeom = new THREE.WireframeGeometry(child.geometry);
-                    var wireframeMat = new THREE.LineBasicMaterial({ color: 0xffffff });
+                    
+                    // 2. Set the color to a "Tech Blue" (0x0077ff)
+                    var wireframeMat = new THREE.LineBasicMaterial({ color: 0x0077ff });
                     var wireframe = new THREE.LineSegments(wireframeGeom, wireframeMat);
                     
-                    // Add the wireframe as a child of the mesh so it moves with it
+                    // 3. Add the wireframe to the mesh
                     child.add(wireframe);
                     
-                    // Optional: Make original material transparent or invisible if you only want the lines
-                    // child.material.transparent = true;
-                    // child.material.opacity = 0.5; 
+                    // 4. HIDE the original painted surface
+                    child.material.visible = false;
                 }
             });
             object.position.y = 0;
