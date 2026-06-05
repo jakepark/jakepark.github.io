@@ -24,21 +24,33 @@ function initP51() {
     directionalLight.position.set(0, 70, 100).normalize();
     p51_scene.add(directionalLight);
 
-    // Renderer (Alpha: true makes the background transparent)
     p51_renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     p51_renderer.setSize(w, h);
     p51_container.appendChild(p51_renderer.domElement);
 
-    // Controls
     p51_controls = new THREE.TrackballControls(p51_camera, p51_renderer.domElement);
     p51_controls.staticMoving = true;
 
-    // Loader - Path updated to your assets folder
     var loader = new THREE.OBJMTLLoader();
     loader.load(
         'assets/models/p51/p51.obj', 
         'assets/models/p51/p51.mtl', 
         function (object) {
+            object.traverse(function (child) {
+                if (child instanceof THREE.Mesh) {
+                    // Create WireframeGeometry from the object's geometry
+                    var wireframeGeom = new THREE.WireframeGeometry(child.geometry);
+                    var wireframeMat = new THREE.LineBasicMaterial({ color: 0xffffff });
+                    var wireframe = new THREE.LineSegments(wireframeGeom, wireframeMat);
+                    
+                    // Add the wireframe as a child of the mesh so it moves with it
+                    child.add(wireframe);
+                    
+                    // Optional: Make original material transparent or invisible if you only want the lines
+                    // child.material.transparent = true;
+                    // child.material.opacity = 0.5; 
+                }
+            });
             object.position.y = 0;
             object.scale.set(1.0, 1.0, 1.0);
             p51_scene.add(object);
