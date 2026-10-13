@@ -1,5 +1,5 @@
 /*@import url("http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic,700");*/
-@import url("font-awesome.min.css");
+/* Font Awesome removed: no icons on the page use it, and the import blocked rendering. */
 
 /*
 	Miniport by HTML5 UP
@@ -1119,7 +1119,7 @@
 	body, input, textarea, select {
 		font-family: 'Open Sans', sans-serif;
 		line-height: 1.85em;
-		color: #888;
+		color: #666;
 		font-weight: 300;
 	}
 
