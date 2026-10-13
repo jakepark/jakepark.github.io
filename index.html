@@ -49,7 +49,7 @@
 	</div>
 
 	<figure class="p51-figure">
-		<div class="p51" data-p51="assets/models/p51.wire">
+		<div class="p51" data-p51>
 			<img src="images/p51.png" alt="P-51D Mustang wireframe" width="383" height="426" />
 		</div>
 		<figcaption><span>P-51D Mustang · modeled in Maya, 2006</span><span class="hint">Drag to rotate · scroll to zoom</span></figcaption>
@@ -98,29 +98,6 @@
 			</ul>
 		</article>
 
-		<article class="log" id="this-site" data-parts="javascript threejs html-css python">
-			<header class="log-head">
-				<h3>This site</h3>
-				<dl class="log-meta">
-					<div><dt>Type</dt><dd>Personal project</dd></div>
-					<div><dt>Source</dt><dd><a href="https://github.com/jakepark/jakepark.github.io">GitHub</a></dd></div>
-				</dl>
-			</header>
-			<p class="log-summary">Rebuilt my old portfolio by hand and made the P-51 fast enough to keep.</p>
-			<dl class="log-body">
-				<div><dt>Starting point</dt><dd>A template site scoring 51 on mobile PageSpeed. The largest element took 29.6 seconds to appear because the browser was busy parsing a 3.1 MB 3D model.</dd></div>
-				<div><dt>Constraints</dt><dd>Static hosting on GitHub Pages, which won’t compress binary files. Keep the 3D model, since I made it.</dd></div>
-				<div><dt>Build</dt><dd>A Python script bakes the model into a compact line list with delta-encoded indices. three.js draws it with trackball controls, and the page only redraws while you’re turning it.</dd></div>
-				<div><dt>Result</dt><dd>The model file went from <span class="num">3.1 MB</span> to <span class="num">300 KB</span>, with nothing left to parse in the browser.</dd></div>
-			</dl>
-			<ol class="flow" aria-label="Model pipeline">
-				<li><b>p51.obj</b><span>3.1 MB text</span></li>
-				<li><b>build_wireframe.py</b><span>merge, dedupe edges</span></li>
-				<li><b>p51.wire</b><span>300 KB binary</span></li>
-				<li><b>three.js</b><span>LineSegments, on demand</span></li>
-			</ol>
-			<ul class="chips" aria-label="Parts"><li>JavaScript</li><li>three.js</li><li>HTML &amp; CSS</li><li>Python</li></ul>
-		</article>
 	</section>
 
 	<section class="section wrap" id="parts" aria-labelledby="parts-title">
@@ -149,7 +126,6 @@
 					<li><button type="button" data-part="apache">Apache</button></li>
 					<li><button type="button" data-part="linux">Linux</button></li>
 					<li><button type="button" data-part="ruby">Ruby</button></li>
-					<li><button type="button" data-part="python">Python</button></li>
 				</ul>
 			</div>
 			<div class="parts-group">

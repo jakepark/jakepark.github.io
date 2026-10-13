@@ -1,6 +1,9 @@
 """Bake an OBJ model into the compact wireframe file the homepage draws.
 
-Usage: python3 tools/build_wireframe.py models/p51/p51.obj assets/models/p51.wire
+Usage: python3 tools/build_wireframe.py models/p51/p51.obj assets/models/p51.wire.js
+
+A .js destination wraps the bytes below in base64 as window.P51_WIRE;
+any other destination writes the raw bytes.
 
 Vertices are merged at 4 decimal places, faces are triangulated, and each
 unique triangle edge becomes one line segment. Output (little-endian):
@@ -82,6 +85,11 @@ for p, q in sorted(edges):
     out += varint(p - prev) + varint(q - p)
     prev = p
 
-open(dst, 'wb').write(out)
+if dst.endswith('.js'):
+    # As a script the model also loads from file:// and GitHub Pages gzips it.
+    import base64
+    open(dst, 'w').write('window.P51_WIRE = "%s";\n' % base64.b64encode(bytes(out)).decode('ascii'))
+else:
+    open(dst, 'wb').write(out)
 print('%d vertices, %d segments, %d bytes' % (len(verts), len(edges), len(out)))
 print('bbox', [round(c, 3) for c in lo], [round(c, 3) for c in hi])

@@ -108,6 +108,7 @@
         var scripts = [
             'assets/js/threejs/three.min.js',
             'assets/js/threejs/TrackballControls.js',
+            'assets/models/p51.wire.js',
             'assets/js/p51.js'
         ];
 

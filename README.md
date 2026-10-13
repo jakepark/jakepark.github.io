@@ -8,18 +8,18 @@ Personal site, served by GitHub Pages from `master`. Plain HTML, CSS and JS with
 python3 -m http.server
 ```
 
-Then visit http://localhost:8000. A local server is needed because the P-51 model is loaded with `fetch`.
+Then visit http://localhost:8000, or just open `index.html` in a browser.
 
 ## Files
 
 - `index.html`: the whole page
 - `assets/css/site.css`, `assets/js/site.js`: styles, parts list, garage slider, deferred P-51 loading
 - `assets/js/p51.js`: draws the P-51 wireframe with three.js and TrackballControls (`assets/js/threejs/`)
-- `assets/models/p51.wire`: the baked wireframe
+- `assets/models/p51.wire.js`: the baked wireframe, base64 in a script so it loads from file:// too
 - `models/p51/`: original Maya export of the P-51
 
 ## Rebuilding the P-51 wireframe
 
 ```
-python3 tools/build_wireframe.py models/p51/p51.obj assets/models/p51.wire
+python3 tools/build_wireframe.py models/p51/p51.obj assets/models/p51.wire.js
 ```

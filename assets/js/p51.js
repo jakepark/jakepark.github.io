@@ -3,7 +3,7 @@
 // tools/build_wireframe.py, so there's no OBJ to parse in the browser.
 (function () {
     var stage = document.querySelector('[data-p51]');
-    if (!stage || !window.THREE) return;
+    if (!stage || !window.THREE || !window.P51_WIRE) return;
 
     // Only render while the model is moving. A few trailing frames let
     // TrackballControls apply wheel zooms, which fire start and end together.
@@ -22,38 +22,32 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.setSize(stage.clientWidth, stage.clientHeight);
 
-    var controls;
+    var model = decode(base64ToBuffer(window.P51_WIRE));
+    var geometry = new THREE.BufferGeometry();
+    geometry.addAttribute('position', new THREE.BufferAttribute(model.positions, 3));
+    geometry.setIndex(new THREE.BufferAttribute(model.indices, 1));
+    scene.add(new THREE.LineSegments(geometry, material));
 
-    fetch(stage.getAttribute('data-p51'))
-        .then(function (response) {
-            if (!response.ok) throw new Error('Could not load the P-51 model (' + response.status + ')');
-            return response.arrayBuffer();
-        })
-        .then(function (buffer) {
-            var model = decode(buffer);
-            var geometry = new THREE.BufferGeometry();
-            geometry.addAttribute('position', new THREE.BufferAttribute(model.positions, 3));
-            geometry.setIndex(new THREE.BufferAttribute(model.indices, 1));
-            scene.add(new THREE.LineSegments(geometry, material));
+    var canvas = renderer.domElement;
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'P-51D Mustang wireframe. Drag to rotate, scroll to zoom.');
+    stage.appendChild(canvas);
 
-            var canvas = renderer.domElement;
-            canvas.setAttribute('role', 'img');
-            canvas.setAttribute('aria-label', 'P-51D Mustang wireframe. Drag to rotate, scroll to zoom.');
-            stage.appendChild(canvas);
+    var controls = new THREE.TrackballControls(camera, canvas);
+    controls.staticMoving = true;
+    controls.addEventListener('start', function () { dragging = true; wake(); });
+    controls.addEventListener('end', function () { dragging = false; wake(); });
 
-            controls = new THREE.TrackballControls(camera, canvas);
-            controls.staticMoving = true;
-            controls.addEventListener('start', function () { dragging = true; wake(); });
-            controls.addEventListener('end', function () { dragging = false; wake(); });
+    bindResize();
+    render();
+    stage.classList.add('is-live');
 
-            bindResize();
-            render();
-            stage.classList.add('is-live');
-        })
-        .catch(function (error) {
-            // The static image stays in place, which is a fine fallback.
-            console.warn(error);
-        });
+    function base64ToBuffer(text) {
+        var binary = atob(text);
+        var bytes = new Uint8Array(binary.length);
+        for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        return bytes.buffer;
+    }
 
     // See tools/build_wireframe.py for the file layout.
     function decode(buffer) {
