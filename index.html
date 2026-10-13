@@ -27,6 +27,8 @@
 	</div>
 </nav>
 
+<div class="layout">
+
 <header class="hero wrap" id="top">
 	<div class="hero-text">
 		<div class="hero-id">
@@ -164,73 +166,6 @@
 
 	</section>
 
-	<section class="section wrap" id="parts" aria-labelledby="parts-title">
-		<div class="section-head">
-			<h2 id="parts-title">Parts list</h2>
-			<p>Pick a part to see where on this page I’ve used it.</p>
-		</div>
-
-		<div class="parts" data-parts-list>
-			<div class="parts-group">
-				<h3>Backend</h3>
-				<ul>
-					<li><button type="button" data-part="ruby">Ruby</button></li>
-					<li><button type="button" data-part="rails">Rails</button></li>
-					<li><button type="button" data-part="python">Python</button></li>
-					<li><button type="button" data-part="django">Django</button></li>
-					<li><button type="button" data-part="celery">Celery</button></li>
-					<li><button type="button" data-part="php">PHP</button></li>
-				</ul>
-			</div>
-			<div class="parts-group">
-				<h3>Data</h3>
-				<ul>
-					<li><button type="button" data-part="postgresql">PostgreSQL</button></li>
-					<li><button type="button" data-part="mysql">MySQL</button></li>
-					<li><button type="button" data-part="redis">Redis</button></li>
-					<li><button type="button" data-part="dynamodb">DynamoDB</button></li>
-				</ul>
-			</div>
-			<div class="parts-group">
-				<h3>Frontend</h3>
-				<ul>
-					<li><button type="button" data-part="javascript">JavaScript</button></li>
-					<li><button type="button" data-part="react">React</button></li>
-					<li><button type="button" data-part="angularjs">AngularJS</button></li>
-					<li><button type="button" data-part="threejs">three.js</button></li>
-					<li><button type="button" data-part="canvas">Canvas</button></li>
-					<li><button type="button" data-part="html-css">HTML &amp; CSS</button></li>
-				</ul>
-			</div>
-			<div class="parts-group">
-				<h3>Cloud &amp; infrastructure</h3>
-				<ul>
-					<li><button type="button" data-part="aws">AWS</button></li>
-					<li><button type="button" data-part="sqs">SQS</button></li>
-					<li><button type="button" data-part="lambda">Lambda</button></li>
-					<li><button type="button" data-part="ec2">EC2</button></li>
-					<li><button type="button" data-part="s3">S3</button></li>
-					<li><button type="button" data-part="eventbridge">EventBridge</button></li>
-					<li><button type="button" data-part="sns">SNS</button></li>
-					<li><button type="button" data-part="docker">Docker</button></li>
-					<li><button type="button" data-part="linux">Linux</button></li>
-					<li><button type="button" data-part="apache">Apache</button></li>
-				</ul>
-			</div>
-			<div class="parts-group">
-				<h3>Platforms &amp; tools</h3>
-				<ul>
-					<li><button type="button" data-part="stripe">Stripe</button></li>
-					<li><button type="button" data-part="sumo-logic">Sumo Logic</button></li>
-					<li><button type="button" data-part="omeka">Omeka</button></li>
-					<li><button type="button" data-part="maya">Maya</button></li>
-				</ul>
-			</div>
-		</div>
-		<p class="parts-status" data-parts-status aria-live="polite">No part selected.</p>
-		<p class="parts-also">Also used: Vue, Backbone, jQuery.</p>
-	</section>
-
 	<section class="section wrap" id="fundamentals" aria-labelledby="fundamentals-title">
 		<div class="section-head">
 			<h2 id="fundamentals-title">Fundamentals</h2>
@@ -309,6 +244,75 @@
 	</section>
 
 </main>
+
+	<aside class="section parts-panel" id="parts" aria-labelledby="parts-title">
+		<div class="section-head">
+			<h2 id="parts-title">Parts list</h2>
+			<p>Pick a part to see where I’ve used it.</p>
+		</div>
+		<p class="parts-status" data-parts-status aria-live="polite">No part selected.</p>
+
+		<div class="parts" data-parts-list>
+			<div class="parts-group">
+				<h3>Backend</h3>
+				<ul>
+					<li><button type="button" data-part="ruby">Ruby</button></li>
+					<li><button type="button" data-part="rails">Rails</button></li>
+					<li><button type="button" data-part="python">Python</button></li>
+					<li><button type="button" data-part="django">Django</button></li>
+					<li><button type="button" data-part="celery">Celery</button></li>
+					<li><button type="button" data-part="php">PHP</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Data</h3>
+				<ul>
+					<li><button type="button" data-part="postgresql">PostgreSQL</button></li>
+					<li><button type="button" data-part="mysql">MySQL</button></li>
+					<li><button type="button" data-part="redis">Redis</button></li>
+					<li><button type="button" data-part="dynamodb">DynamoDB</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Frontend</h3>
+				<ul>
+					<li><button type="button" data-part="javascript">JavaScript</button></li>
+					<li><button type="button" data-part="react">React</button></li>
+					<li><button type="button" data-part="angularjs">AngularJS</button></li>
+					<li><button type="button" data-part="threejs">three.js</button></li>
+					<li><button type="button" data-part="canvas">Canvas</button></li>
+					<li><button type="button" data-part="html-css">HTML &amp; CSS</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Cloud &amp; infrastructure</h3>
+				<ul>
+					<li><button type="button" data-part="aws">AWS</button></li>
+					<li><button type="button" data-part="sqs">SQS</button></li>
+					<li><button type="button" data-part="lambda">Lambda</button></li>
+					<li><button type="button" data-part="ec2">EC2</button></li>
+					<li><button type="button" data-part="s3">S3</button></li>
+					<li><button type="button" data-part="eventbridge">EventBridge</button></li>
+					<li><button type="button" data-part="sns">SNS</button></li>
+					<li><button type="button" data-part="docker">Docker</button></li>
+					<li><button type="button" data-part="linux">Linux</button></li>
+					<li><button type="button" data-part="apache">Apache</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Platforms &amp; tools</h3>
+				<ul>
+					<li><button type="button" data-part="stripe">Stripe</button></li>
+					<li><button type="button" data-part="sumo-logic">Sumo Logic</button></li>
+					<li><button type="button" data-part="omeka">Omeka</button></li>
+					<li><button type="button" data-part="maya">Maya</button></li>
+				</ul>
+			</div>
+		</div>
+		<p class="parts-also">Also used: Vue, Backbone, jQuery.</p>
+	</aside>
+
+</div>
 
 <footer class="footer">
 	<div class="wrap footer-inner">
