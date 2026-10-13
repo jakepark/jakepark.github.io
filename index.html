@@ -4,36 +4,20 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 
 		<title>Jake Park</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="description" content="Jake Park is a software developer who builds web apps in JavaScript, React, Vue, Angular and Rails." />
+		<link rel="preload" as="image" href="images/jp-headshot.webp" type="image/webp" fetchpriority="high" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
     <link rel="shortcut icon" type="image/png" href="./images/favicon.ico"/>
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-		  ga('create', 'UA-68692328-1', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
-
-		<script src="assets/js/threejs/three.min.js"></script>
-    <script src="assets/js/threejs/DDSLoader.js"></script>
-    <script src="assets/js/threejs/MTLLoader.js"></script>
-    <script src="assets/js/threejs/OBJMTLLoader.js"></script>
-    <script src="assets/js/threejs/TrackballControls.js"></script>
-    
-    
 		<style>
 			/* Base Desktop Styling */
 			#three-container {
@@ -69,6 +53,38 @@
 				z-index: 10;
 			}
 
+			/* Styled like the old h3 so the heading order is h1 > h2 */
+			#top header .tagline {
+				font-size: 1.5em;
+				letter-spacing: -0.015em;
+			}
+
+			#top .p51-credit {
+				font-size: 0.7em;
+				text-align: center;
+				color: #666;
+				margin-top: -10px;
+			}
+
+			/* Keep the aspect ratio now that images carry width and height attributes */
+			.image img {
+				height: auto;
+			}
+
+			.image video {
+				display: block;
+				width: 100%;
+				height: auto;
+			}
+
+			/* Give the small text links a tap target of at least 24px */
+			.div-projects .box > a:not(.image),
+			.div-projects .box p > a {
+				display: inline-block;
+				padding: 5px 0;
+				margin-right: 0.75em;
+			}
+
 			/* Mobile Fixes */
 			@media screen and (max-width: 736px) {
 				#top .row {
@@ -83,6 +99,7 @@
 					width: 100%; 
 				}
 				header { text-align: center; }
+				#top header .tagline { font-size: 1.25em; }
 			}
 		</style>
 
@@ -104,12 +121,12 @@
     <article class="container" id="top">
         <div class="row" style="display: flex; align-items: center;">
             <div class="4u 12u(mobile)">
-                <span class="image fit"><img src="images/jp-headshot.jpg" alt="" /></span>
+                <span class="image fit"><img src="images/jp-headshot.webp" alt="Jake Park" width="540" height="540" fetchpriority="high" /></span>
             </div>
             <div class="8u 12u(mobile)">
 							<header>
 									<h1><strong>Jake Park</strong></h1>
-									<h3>Software Developer</h3>
+									<h2 class="tagline">Software Developer</h2>
 							</header>
 							<div class="row">
 									<div class="7u 12u(mobile) hero-content">
@@ -120,7 +137,7 @@
 									</div>
 									<div class="5u 12u(mobile)">
 											<div id="three-container" class="plane-canvas"></div>
-											<p style="font-size: 0.7em; text-align: center; color: #888; margin-top: -10px;">
+											<p class="p51-credit">
 												P-51D Model © Jake Park 2006
 											</p>
 									</div>
@@ -143,8 +160,12 @@
 							<div class="div-projects">
 								<article class="box style2">
 									<a href="http://parkjake.com/asteroids/"
-										class="image featured">
-										<img src="./images/asteroids1.gif" alt="" />
+										class="image featured" aria-label="Play Asteroids">
+										<video autoplay muted loop playsinline preload="none" width="800" height="478"
+											poster="./images/asteroids1-poster.webp" aria-label="Asteroids gameplay">
+											<source src="./images/asteroids1.webm" type="video/webm" />
+											<source src="./images/asteroids1.mp4" type="video/mp4" />
+										</video>
 									</a>
 									<h3><a href="http://parkjake.com/asteroids/">Asteroids!</a></h3>
 									<p>A Javascript re-imagining of classic Asteroids gameplay</p>
@@ -164,7 +185,7 @@
 								<article class="box style2">
 									<a href="http://myfacebook.parkjake.com"
 									 	class="image featured">
-									 	<img src="./images/myfacebook.png" alt="" />
+									 	<img src="./images/myfacebook.webp" alt="myFacebook profile page" width="800" height="478" loading="lazy" />
 									</a>
 									<h3><a href="http://myfacebook.parkjake.com">myFacebook</a></h3>
 									<p>A Backbone.js web app inspired by Facebook</p>
@@ -182,7 +203,7 @@
 
 							<div class="div-projects">
 								<article class="box style2">
-									<a href="http://parkjake.com/ww2/app/index.html#/chapters" class="image featured"><img src="./images/ww2.png" alt="" /></a>
+									<a href="http://parkjake.com/ww2/app/index.html#/chapters" class="image featured"><img src="./images/ww2.webp" alt="The (abridged) History of World War 2 chapter index" width="800" height="520" loading="lazy" /></a>
 									<h3><a href="http://parkjake.com/ww2/app/index.html#/chapters">The (abridged) History of World War 2: 1944</a></h3>
 									<p>An AngularJS site modeled on Rowan Technology's</p>
 									<p><a href="http://www.westpointhistoryofwarfare.com">West Point History of the Civil War</a></p>
@@ -196,7 +217,7 @@
 
 							<div class="div-projects">
 								<article class="box style2">
-									<a href="#" class="image featured"><img src="./images/chess.png" alt="" /></a>
+									<a href="http://www.github.com/jakepark/chess" class="image featured"><img src="./images/chess.webp" alt="Chess board in the terminal" width="429" height="424" loading="lazy" /></a>
 									<h3><a href="http://www.github.com/jakepark/chess">Chess</a></h3>
 									<a href="http://www.github.com/jakepark/chess">Github</a>
 									<ul class = 'div-projects-list'>
@@ -226,77 +247,77 @@
 					<div class="flex-container">
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/js.png">
+                <img class="icon featured" src="./images/skills/js.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>JavaScript</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/react.png">
+                <img class="icon featured" src="./images/skills/react.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>React</h3>
               </section>
             </div>
             
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/vue.png">
+                <img class="icon featured" src="./images/skills/vue.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>Vue</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/angular.png">
+                <img class="icon featured" src="./images/skills/angular.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>Angular</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/backbone.png">
+                <img class="icon featured" src="./images/skills/backbone.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>Backbone</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/jquery.png">
+                <img class="icon featured" src="./images/skills/jquery.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>jQuery</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/ruby.png">
+                <img class="icon featured" src="./images/skills/ruby.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>Ruby</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/rails.png">
+                <img class="icon featured" src="./images/skills/rails.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>Rails</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/html-5.png">
+                <img class="icon featured" src="./images/skills/html-5.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>HTML5</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/css.png">
+                <img class="icon featured" src="./images/skills/css.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>CSS</h3>
               </section>
             </div>
 
             <div class="div-skills">
               <section class="box style1">
-                <img class="icon featured" src="./images/skills/postgresql.png">
+                <img class="icon featured" src="./images/skills/postgresql.webp" alt="" width="100" height="100" loading="lazy">
                 <h3>SQL</h3>
               </section>
             </div>
@@ -330,21 +351,55 @@
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/threejs/three.min.js"></script>
-
-			<script src="assets/js/threejs/DDSLoader.js"></script>
-			<script src="assets/js/threejs/MTLLoader.js"></script>
-			<script src="assets/js/threejs/OBJMTLLoader.js"></script>
-			<script src="assets/js/threejs/TrackballControls.js"></script>
-
-			<script src="assets/js/p51.js"></script>
-
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/skel-viewport.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			
+			<!-- Load the 3D P-51 only after the page has loaded and the plane is on screen,
+			     so it never holds up the first paint. The static p51.png shows until then. -->
+			<script>
+				(function () {
+					var container = document.getElementById('three-container');
+					if (!container) return;
+
+					var scripts = [
+						'assets/js/threejs/three.min.js',
+						'assets/js/threejs/DDSLoader.js',
+						'assets/js/threejs/MTLLoader.js',
+						'assets/js/threejs/OBJMTLLoader.js',
+						'assets/js/threejs/TrackballControls.js',
+						'assets/js/p51.js'
+					];
+
+					function loadNext(i) {
+						if (i >= scripts.length) return;
+						var s = document.createElement('script');
+						s.src = scripts[i];
+						s.onload = function () { loadNext(i + 1); };
+						document.body.appendChild(s);
+					}
+
+					function startWhenVisible() {
+						if (!('IntersectionObserver' in window)) return loadNext(0);
+						var observer = new IntersectionObserver(function (entries) {
+							if (!entries[0].isIntersecting) return;
+							observer.disconnect();
+							loadNext(0);
+						});
+						observer.observe(container);
+					}
+
+					window.addEventListener('load', function () {
+						if ('requestIdleCallback' in window) {
+							window.requestIdleCallback(startWhenVisible, { timeout: 2000 });
+						} else {
+							setTimeout(startWhenVisible, 0);
+						}
+					});
+				})();
+			</script>
+
 	</body>
 </html>
