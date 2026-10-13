@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Jake Park · Software Developer</title>
-	<meta name="description" content="Jake Park is a software developer. Build logs for client work, AWS projects, and the P-51 and motorcycle he rebuilt along the way." />
+	<meta name="description" content="Jake Park is a software developer who has built Rails, React and Python products at Medidata, BoardVitals and ReWyre. Build logs, a parts list, and the P-51 and motorcycle he rebuilt along the way." />
 	<meta name="color-scheme" content="light dark" />
 	<link rel="icon" href="images/favicon.ico" />
 	<link rel="preload" href="assets/fonts/plex-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
@@ -17,7 +17,6 @@
 
 <nav class="topbar" aria-label="Sections">
 	<div class="wrap topbar-inner">
-		<a class="topbar-name" href="#top">Jake Park</a>
 		<ul>
 			<li><a href="#work">Work</a></li>
 			<li><a href="#parts">Parts</a></li>
@@ -60,15 +59,15 @@
 
 	<section class="section wrap" id="work" aria-labelledby="work-title">
 		<div class="section-head">
-			<h2 id="work-title">Recent work</h2>
-			<p>Each project is written up as a build log: what I started with, the constraints, the parts, and what came out.</p>
+			<h2 id="work-title">Work</h2>
+			<p>Each entry reads like a build log: the job, the parts, and what came out.</p>
 		</div>
 
 		<article class="log" id="dance-story" data-parts="omeka">
 			<header class="log-head">
-				<h3>Dance Story archive</h3>
+				<h3>Dance Story</h3>
 				<dl class="log-meta">
-					<div><dt>Type</dt><dd>Client contract</dd></div>
+					<div><dt>Role</dt><dd>Contract developer</dd></div>
 					<div><dt>Status</dt><dd><span class="status">Not yet launched</span></dd></div>
 				</dl>
 			</header>
@@ -82,14 +81,79 @@
 			<ul class="chips" aria-label="Parts"><li>Omeka</li></ul>
 		</article>
 
-		<article class="log" id="aws-coursework" data-parts="ec2 s3 lambda dynamodb eventbridge sns linux apache mysql php">
+		<article class="log" id="rewyre" data-parts="python django celery redis postgresql react javascript docker aws">
+			<header class="log-head">
+				<h3>ReWyre</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Software Engineer</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Shipped a feature-complete MVP for a contractor marketplace that connects buyers and vendors.</p>
+			<dl class="log-body">
+				<div><dt>Built</dt><dd>Backend and frontend features for both end users and admins.</dd></div>
+				<div><dt>Architected</dt><dd>Background task pipelines on distributed queues (Celery Beat) to keep data consistent and throughput up.</dd></div>
+				<div><dt>Shipped</dt><dd>CI/CD workflows that balanced iteration speed with stability for production-critical clients.</dd></div>
+			</dl>
+			<ul class="chips" aria-label="Parts">
+				<li>Python</li><li>Django</li><li>Celery</li><li>Redis</li><li>PostgreSQL</li><li>React</li><li>Docker</li><li>AWS</li>
+			</ul>
+		</article>
+
+		<article class="log" id="medidata" data-parts="ruby rails react javascript mysql redis aws sqs sumo-logic">
+			<header class="log-head">
+				<h3>Medidata</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Applications Engineer</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Led full-stack development of Study Transfer, the deliverable for a new enterprise contract.</p>
+			<dl class="log-stats">
+				<div><dt>Contract value</dt><dd class="num">$1M</dd></div>
+				<div><dt>Teams integrated</dt><dd class="num">3+</dd></div>
+			</dl>
+			<dl class="log-body">
+				<div><dt>Planned</dt><dd>Owned roadmap planning with senior PMs, prioritizing features around regulatory and user workflow needs.</dd></div>
+				<div><dt>Integrated</dt><dd>Worked across three or more engineering teams to integrate tightly with iMedidata, Rave and CTMS.</dd></div>
+				<div><dt>Built</dt><dd>Features in a microservice ecosystem using Rails, React, and background jobs on AWS SQS.</dd></div>
+				<div><dt>Tooled</dt><dd>An internal CLI that validates database state in CI, making tests more reliable and debugging faster.</dd></div>
+				<div><dt>Monitored</dt><dd>A heartbeat system for application workers, feeding a metrics dashboard in Sumo Logic.</dd></div>
+				<div><dt>On call</dt><dd>Rotated as on-call tech lead, responding to and documenting high-severity production incidents across multiple systems.</dd></div>
+			</dl>
+			<ul class="chips" aria-label="Parts">
+				<li>Ruby</li><li>Rails</li><li>React</li><li>MySQL</li><li>Redis</li><li>AWS SQS</li><li>Sumo Logic</li>
+			</ul>
+		</article>
+
+		<article class="log" id="boardvitals" data-parts="ruby rails angularjs react javascript postgresql redis stripe">
+			<header class="log-head">
+				<h3>BoardVitals</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Software Engineer</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Full-stack features for an enterprise online learning platform for medical professionals and students.</p>
+			<dl class="log-stats">
+				<div><dt>Users</dt><dd class="num">100k → 200k</dd></div>
+				<div><dt>Outcome</dt><dd>Acquired</dd></div>
+			</dl>
+			<dl class="log-body">
+				<div><dt>Scaled</dt><dd>Supported the user base as it doubled, through to the company’s successful acquisition.</dd></div>
+				<div><dt>Migrated</dt><dd>Proposed and shipped the move from AngularJS to React to speed up page loads and raise conversions.</dd></div>
+				<div><dt>Payments</dt><dd>Built critical Stripe payment features, with a focus on accuracy, security and business continuity.</dd></div>
+			</dl>
+			<ul class="chips" aria-label="Parts">
+				<li>Ruby</li><li>Rails</li><li>AngularJS</li><li>React</li><li>PostgreSQL</li><li>Redis</li><li>Stripe</li>
+			</ul>
+		</article>
+
+		<article class="log" id="aws-coursework" data-parts="aws ec2 s3 lambda dynamodb eventbridge sns linux apache mysql php">
 			<header class="log-head">
 				<h3>AWS and LAMP coursework</h3>
 				<dl class="log-meta">
-					<div><dt>Type</dt><dd>Night classes, Queensborough Community College</dd></div>
+					<div><dt>Role</dt><dd>Student, Queensborough Community College</dd></div>
 				</dl>
 			</header>
-			<p class="log-summary">Coursework covering a LAMP stack and serverless AWS services.</p>
+			<p class="log-summary">Night classes covering a LAMP stack and serverless AWS services.</p>
 			<dl class="log-body">
 				<div><dt>Build</dt><dd class="todo">Waiting on notes: what the class projects actually did. If the code is on GitHub, link it here.</dd></div>
 			</dl>
@@ -103,51 +167,68 @@
 	<section class="section wrap" id="parts" aria-labelledby="parts-title">
 		<div class="section-head">
 			<h2 id="parts-title">Parts list</h2>
-			<p>Pick a part to see which builds on this page use it.</p>
+			<p>Pick a part to see where on this page I’ve used it.</p>
 		</div>
 
 		<div class="parts" data-parts-list>
 			<div class="parts-group">
-				<h3>Cloud</h3>
+				<h3>Backend</h3>
 				<ul>
-					<li><button type="button" data-part="ec2">EC2</button></li>
-					<li><button type="button" data-part="s3">S3</button></li>
-					<li><button type="button" data-part="lambda">Lambda</button></li>
-					<li><button type="button" data-part="dynamodb">DynamoDB</button></li>
-					<li><button type="button" data-part="eventbridge">EventBridge</button></li>
-					<li><button type="button" data-part="sns">SNS</button></li>
+					<li><button type="button" data-part="ruby">Ruby</button></li>
+					<li><button type="button" data-part="rails">Rails</button></li>
+					<li><button type="button" data-part="python">Python</button></li>
+					<li><button type="button" data-part="django">Django</button></li>
+					<li><button type="button" data-part="celery">Celery</button></li>
+					<li><button type="button" data-part="php">PHP</button></li>
 				</ul>
 			</div>
 			<div class="parts-group">
-				<h3>Backend</h3>
+				<h3>Data</h3>
 				<ul>
-					<li><button type="button" data-part="php">PHP</button></li>
+					<li><button type="button" data-part="postgresql">PostgreSQL</button></li>
 					<li><button type="button" data-part="mysql">MySQL</button></li>
-					<li><button type="button" data-part="apache">Apache</button></li>
-					<li><button type="button" data-part="linux">Linux</button></li>
-					<li><button type="button" data-part="ruby">Ruby</button></li>
+					<li><button type="button" data-part="redis">Redis</button></li>
+					<li><button type="button" data-part="dynamodb">DynamoDB</button></li>
 				</ul>
 			</div>
 			<div class="parts-group">
 				<h3>Frontend</h3>
 				<ul>
 					<li><button type="button" data-part="javascript">JavaScript</button></li>
-					<li><button type="button" data-part="html-css">HTML &amp; CSS</button></li>
-					<li><button type="button" data-part="canvas">Canvas</button></li>
-					<li><button type="button" data-part="threejs">three.js</button></li>
+					<li><button type="button" data-part="react">React</button></li>
 					<li><button type="button" data-part="angularjs">AngularJS</button></li>
+					<li><button type="button" data-part="threejs">three.js</button></li>
+					<li><button type="button" data-part="canvas">Canvas</button></li>
+					<li><button type="button" data-part="html-css">HTML &amp; CSS</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Cloud &amp; infrastructure</h3>
+				<ul>
+					<li><button type="button" data-part="aws">AWS</button></li>
+					<li><button type="button" data-part="sqs">SQS</button></li>
+					<li><button type="button" data-part="lambda">Lambda</button></li>
+					<li><button type="button" data-part="ec2">EC2</button></li>
+					<li><button type="button" data-part="s3">S3</button></li>
+					<li><button type="button" data-part="eventbridge">EventBridge</button></li>
+					<li><button type="button" data-part="sns">SNS</button></li>
+					<li><button type="button" data-part="docker">Docker</button></li>
+					<li><button type="button" data-part="linux">Linux</button></li>
+					<li><button type="button" data-part="apache">Apache</button></li>
 				</ul>
 			</div>
 			<div class="parts-group">
 				<h3>Platforms &amp; tools</h3>
 				<ul>
+					<li><button type="button" data-part="stripe">Stripe</button></li>
+					<li><button type="button" data-part="sumo-logic">Sumo Logic</button></li>
 					<li><button type="button" data-part="omeka">Omeka</button></li>
 					<li><button type="button" data-part="maya">Maya</button></li>
 				</ul>
 			</div>
 		</div>
 		<p class="parts-status" data-parts-status aria-live="polite">No part selected.</p>
-		<p class="parts-also">Also used: React, Vue, Rails, PostgreSQL, Backbone, jQuery.</p>
+		<p class="parts-also">Also used: Vue, Backbone, jQuery.</p>
 	</section>
 
 	<section class="section wrap" id="fundamentals" aria-labelledby="fundamentals-title">

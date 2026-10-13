@@ -135,15 +135,9 @@ a:hover { text-decoration-thickness: 2px; }
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 	gap: 0.25rem 1.5rem;
 	padding-block: 0.6rem;
-}
-.topbar-name {
-	font-family: var(--f-display);
-	font-size: var(--step-1);
-	color: var(--ink);
-	text-decoration: none;
 }
 .topbar ul {
 	display: flex;
@@ -303,6 +297,28 @@ h1 { font-size: var(--step-3); letter-spacing: -0.01em; }
 	background: var(--accent-soft);
 	border-radius: 3px;
 	padding: 0.1rem 0.4rem;
+}
+.log-stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem 2.5rem;
+	margin: 0;
+}
+.log-stats div { display: grid; gap: 0.1rem; }
+.log-stats dt {
+	font-family: var(--f-mono);
+	font-size: 0.72rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.log-stats dd {
+	margin: 0;
+	font-family: var(--f-display);
+	font-weight: 600;
+	font-size: var(--step-2);
+	line-height: 1.1;
+	color: var(--accent);
 }
 .log-summary { font-size: var(--step-1); max-width: 60ch; }
 .log-body { display: grid; gap: 0; margin: 0; border-top: 1px solid var(--rule); }
