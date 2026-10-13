@@ -105,9 +105,18 @@
         var stage = document.querySelector('[data-p51]');
         if (!stage) return;
 
-        function load() {
+        var scripts = [
+            'assets/js/threejs/three.min.js',
+            'assets/js/threejs/TrackballControls.js',
+            'assets/js/p51.js'
+        ];
+
+        function load(i) {
+            i = i || 0;
+            if (i >= scripts.length) return;
             var script = document.createElement('script');
-            script.src = 'assets/js/p51.js';
+            script.src = scripts[i];
+            script.onload = function () { load(i + 1); };
             document.body.appendChild(script);
         }
 

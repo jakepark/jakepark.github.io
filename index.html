@@ -38,7 +38,6 @@
 			</div>
 		</div>
 		<p class="lede">I build software with the same precision I used to rebuild my motorcycle’s engine. I treat coding like mechanical design: break the system into components, understand the constraints, build and iterate.</p>
-		<p class="now"><span class="tag">Currently</span> Building an Omeka archive integration for Dance Story, a client contract launching in 2026.</p>
 		<ul class="contact">
 			<li><a href="https://github.com/jakepark">GitHub</a></li>
 			<li><a href="https://www.linkedin.com/in/parkjake">LinkedIn</a></li>
@@ -53,7 +52,7 @@
 		<div class="p51" data-p51="assets/models/p51.wire">
 			<img src="images/p51.png" alt="P-51D Mustang wireframe" width="383" height="426" />
 		</div>
-		<figcaption><span>P-51D Mustang · modeled in Maya, 2006</span><span class="hint">Drag to turn</span></figcaption>
+		<figcaption><span>P-51D Mustang · modeled in Maya, 2006</span><span class="hint">Drag to rotate · scroll to zoom</span></figcaption>
 	</figure>
 </header>
 
@@ -70,8 +69,7 @@
 				<h3>Dance Story archive</h3>
 				<dl class="log-meta">
 					<div><dt>Type</dt><dd>Client contract</dd></div>
-					<div><dt>Year</dt><dd>2026</dd></div>
-					<div><dt>Status</dt><dd><span class="status">Launching 2026</span></dd></div>
+					<div><dt>Status</dt><dd><span class="status">Not yet launched</span></dd></div>
 				</dl>
 			</header>
 			<p class="log-summary">Integrating an Omeka archive for Dance Story.</p>
@@ -89,7 +87,6 @@
 				<h3>AWS and LAMP coursework</h3>
 				<dl class="log-meta">
 					<div><dt>Type</dt><dd>Night classes, Queensborough Community College</dd></div>
-					<div><dt>Year</dt><dd>2026</dd></div>
 				</dl>
 			</header>
 			<p class="log-summary">Coursework covering a LAMP stack and serverless AWS services.</p>
@@ -101,29 +98,28 @@
 			</ul>
 		</article>
 
-		<article class="log" id="this-site" data-parts="javascript webgl html-css python">
+		<article class="log" id="this-site" data-parts="javascript threejs html-css python">
 			<header class="log-head">
 				<h3>This site</h3>
 				<dl class="log-meta">
 					<div><dt>Type</dt><dd>Personal project</dd></div>
-					<div><dt>Year</dt><dd>2026</dd></div>
 					<div><dt>Source</dt><dd><a href="https://github.com/jakepark/jakepark.github.io">GitHub</a></dd></div>
 				</dl>
 			</header>
-			<p class="log-summary">Rebuilt my 2015 portfolio by hand and made the P-51 fast enough to keep.</p>
+			<p class="log-summary">Rebuilt my old portfolio by hand and made the P-51 fast enough to keep.</p>
 			<dl class="log-body">
 				<div><dt>Starting point</dt><dd>A template site scoring 51 on mobile PageSpeed. The largest element took 29.6 seconds to appear because the browser was busy parsing a 3.1 MB 3D model.</dd></div>
 				<div><dt>Constraints</dt><dd>Static hosting on GitHub Pages, which won’t compress binary files. Keep the 3D model, since I made it.</dd></div>
-				<div><dt>Build</dt><dd>A Python script bakes the model into a compact line list with delta-encoded indices. A small WebGL renderer draws it directly instead of loading three.js, and only redraws when you turn it.</dd></div>
-				<div><dt>Result</dt><dd>The model file went from <span class="num">3.1 MB</span> to <span class="num">300 KB</span>, and the 3D code from <span class="num">430 KB</span> to about <span class="num">8 KB</span>.</dd></div>
+				<div><dt>Build</dt><dd>A Python script bakes the model into a compact line list with delta-encoded indices. three.js draws it with trackball controls, and the page only redraws while you’re turning it.</dd></div>
+				<div><dt>Result</dt><dd>The model file went from <span class="num">3.1 MB</span> to <span class="num">300 KB</span>, with nothing left to parse in the browser.</dd></div>
 			</dl>
 			<ol class="flow" aria-label="Model pipeline">
 				<li><b>p51.obj</b><span>3.1 MB text</span></li>
 				<li><b>build_wireframe.py</b><span>merge, dedupe edges</span></li>
 				<li><b>p51.wire</b><span>300 KB binary</span></li>
-				<li><b>WebGL</b><span>gl.LINES, on demand</span></li>
+				<li><b>three.js</b><span>LineSegments, on demand</span></li>
 			</ol>
-			<ul class="chips" aria-label="Parts"><li>JavaScript</li><li>WebGL</li><li>HTML &amp; CSS</li><li>Python</li></ul>
+			<ul class="chips" aria-label="Parts"><li>JavaScript</li><li>three.js</li><li>HTML &amp; CSS</li><li>Python</li></ul>
 		</article>
 	</section>
 
@@ -161,7 +157,6 @@
 				<ul>
 					<li><button type="button" data-part="javascript">JavaScript</button></li>
 					<li><button type="button" data-part="html-css">HTML &amp; CSS</button></li>
-					<li><button type="button" data-part="webgl">WebGL</button></li>
 					<li><button type="button" data-part="canvas">Canvas</button></li>
 					<li><button type="button" data-part="threejs">three.js</button></li>
 					<li><button type="button" data-part="angularjs">AngularJS</button></li>

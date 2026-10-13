@@ -14,7 +14,7 @@ Then visit http://localhost:8000. A local server is needed because the P-51 mode
 
 - `index.html`: the whole page
 - `assets/css/site.css`, `assets/js/site.js`: styles, parts list, garage slider, deferred P-51 loading
-- `assets/js/p51.js`: WebGL renderer for the P-51 wireframe
+- `assets/js/p51.js`: draws the P-51 wireframe with three.js and TrackballControls (`assets/js/threejs/`)
 - `assets/models/p51.wire`: the baked wireframe
 - `models/p51/`: original Maya export of the P-51
 
