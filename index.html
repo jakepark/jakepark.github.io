@@ -1,405 +1,308 @@
-<!DOCTYPE HTML>
-<!--
-	Miniport by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html lang="en">
-	<head>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Jake Park · Software Developer</title>
+	<meta name="description" content="Jake Park is a software developer who has built Rails, React and Python products at Medidata, BoardVitals and ReWyre. Build logs, a parts list, and the P-51 and motorcycle he rebuilt along the way." />
+	<meta name="color-scheme" content="light dark" />
+	<link rel="icon" href="images/favicon.ico" />
+	<link rel="preload" href="assets/fonts/plex-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="assets/fonts/plex-sans-condensed-600-latin.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="stylesheet" href="assets/css/site.css" />
+</head>
+<body>
 
-		<title>Jake Park</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content="Jake Park is a software developer who builds web apps in JavaScript, React, Vue, Angular and Rails." />
-		<link rel="preload" as="image" href="images/jp-headshot.webp" type="image/webp" fetchpriority="high" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="shortcut icon" type="image/png" href="./images/favicon.ico"/>
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+<a class="skip" href="#work">Skip to the work</a>
 
-		<style>
-			/* Base Desktop Styling */
-			#three-container {
-				height: 350px;
-				width: 100%;
-				/* Keep the background image here */
-				background: url('../images/p51.png') no-repeat center center;
-				background-size: contain;
-				margin-top: -100px;
-				z-index: 1;
-				overflow: hidden;
-			}
+<nav class="topbar" aria-label="Sections">
+	<div class="wrap topbar-inner">
+		<ul>
+			<li><a href="#work">Recent</a></li>
+			<li><a href="#parts">Parts</a></li>
+			<li><a href="#fundamentals">Fundamentals</a></li>
+			<li><a href="#about">About</a></li>
+		</ul>
+	</div>
+</nav>
 
-			/* Hide the canvas inside until the model is loaded */
-			#three-container canvas {
-				opacity: 0;
-				width: 100% !important;
-		    height: 100% !important;
-				transition: opacity 0.5s ease-in;
-			}
+<div class="layout">
 
-			/* Once loaded, show the canvas and hide the background */
-			#three-container.model-loaded {
-				background: none !important;
-			}
+<header class="hero wrap" id="top">
+	<div class="hero-text">
+		<div class="hero-id">
+			<img class="headshot" src="images/jp-headshot.webp" alt="Illustrated portrait of Jake Park" width="540" height="540" fetchpriority="high" />
+			<div>
+				<h1>Jake Park</h1>
+				<p class="role">Software developer</p>
+			</div>
+		</div>
+		<p class="lede">I build software with the same precision I used to completely restore my motorcycle. I treat coding like mechanical design: break the system into components, understand the constraints, build and iterate.</p>
+		<ul class="contact">
+			<li><a href="https://github.com/jakepark">GitHub</a></li>
+			<li><a href="https://www.linkedin.com/in/parkjake">LinkedIn</a></li>
+			<!-- TODO(content): add resume.pdf to the repo root -->
+			<li><a href="resume.pdf">Résumé (PDF)</a></li>
+			<!-- TODO(content): confirm the public email address -->
+			<li><a href="mailto:jake@parkjake.com">jake@parkjake.com</a></li>
+		</ul>
+	</div>
+
+	<figure class="p51-figure">
+		<div class="p51" data-p51>
+			<img src="images/p51.png" alt="P-51D Mustang wireframe" width="383" height="426" />
+		</div>
+		<figcaption><span>P-51D Mustang · modeled in Maya, 2006</span><span class="hint">Drag to rotate · scroll to zoom</span></figcaption>
+	</figure>
+</header>
+
+<main>
+
+	<section class="section wrap" id="work" aria-labelledby="work-title">
+		<div class="section-head">
+			<h2 id="work-title">Recent</h2>
 			
-			#three-container.model-loaded canvas {
-				opacity: 1;
-			}
-			
-			.hero-content {
-				position: relative;
-				z-index: 10;
-			}
+		</div>
 
-			/* Styled like the old h3 so the heading order is h1 > h2 */
-			#top header .tagline {
-				font-size: 1.5em;
-				letter-spacing: -0.015em;
-			}
+		<article class="log" id="aws-coursework" data-parts="aws ec2 s3 lambda dynamodb eventbridge sns linux apache mysql php">
+			<header class="log-head">
+				<h3>AWS and LAMP coursework</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Student, Queensborough Community College</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Coursework including LAMP stack and serverless AWS services.</p>
+			<ul class="chips" aria-label="Parts">
+				<li>Linux</li><li>Apache</li><li>MySQL</li><li>PHP</li><li>EC2</li><li>S3</li><li>Lambda</li><li>DynamoDB</li><li>EventBridge</li><li>SNS</li>
+			</ul>
+		</article>
 
-			#top .p51-credit {
-				font-size: 0.7em;
-				text-align: center;
-				color: #666;
-				margin-top: -10px;
-			}
+		<article class="log" id="dance-story" data-parts="omeka">
+			<header class="log-head">
+				<h3>Dance Story</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Contract developer</dd></div>
+					<div><dt>Status</dt><dd><span class="status">Launches 2027</span></dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Integrating an archival system for historians and archivists</p>
+			<ul class="chips" aria-label="Parts"><li>Omeka</li></ul>
+		</article>
 
-			/* Keep the aspect ratio now that images carry width and height attributes */
-			.image img {
-				height: auto;
-			}
+		<article class="log" id="rewyre" data-parts="python django celery redis postgresql react javascript docker aws">
+			<header class="log-head">
+				<h3>ReWyre</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Software Engineer</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Shipped a feature-complete MVP for a contractor marketplace that connects buyers and vendors.</p>
+			<dl class="log-body">
+				<div><dt>Built</dt><dd>Backend and frontend features for both end users and admins.</dd></div>
+				<div><dt>Architected</dt><dd>Background task pipelines on distributed queues (Celery Beat) to keep data consistent and throughput up.</dd></div>
+				<div><dt>Shipped</dt><dd>CI/CD workflows that balanced iteration speed with stability for production-critical clients.</dd></div>
+			</dl>
+			<ul class="chips" aria-label="Parts">
+				<li>Python</li><li>Django</li><li>Celery</li><li>Redis</li><li>PostgreSQL</li><li>React</li><li>Docker</li><li>AWS</li>
+			</ul>
+		</article>
 
-			.image video {
-				display: block;
-				width: 100%;
-				height: auto;
-			}
+		<article class="log" id="medidata" data-parts="ruby rails react javascript mysql redis aws sumo-logic sqs ec2 ecs microservices">
+			<header class="log-head">
+				<h3>Medidata</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Applications Engineer</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Built and ran features across a microservice ecosystem, and led full-stack development of Study Transfer, the deliverable for a new enterprise contract.</p>
+			<dl class="log-stats">
+				<div><dt>Contract value</dt><dd class="num">$1M+</dd></div>
+				<div><dt>Teams integrated</dt><dd class="num">3+</dd></div>
+			</dl>
+			<dl class="log-body">
+				<div><dt>Built</dt><dd>Features across a microservice ecosystem: Rails services, React frontends, and background jobs on AWS SQS, running on EC2 and ECS.</dd></div>
+				<div><dt>Integrated</dt><dd>Worked with three or more engineering teams across the platform to keep services tightly integrated with iMedidata, Rave and CTMS.</dd></div>
+				<div><dt>Monitored</dt><dd>A heartbeat system for application workers, feeding a metrics dashboard in Sumo Logic.</dd></div>
+				<div><dt>Tooled</dt><dd>An internal CLI that validates database state in CI, making tests more reliable and debugging faster.</dd></div>
+				<div><dt>On call</dt><dd>Rotated as on-call tech lead, responding to and documenting high-severity production incidents across multiple systems.</dd></div>
+				<div><dt>Planned</dt><dd>Owned roadmap planning with senior PMs, prioritizing features around regulatory and user workflow needs.</dd></div>
+			</dl>
+			<ul class="chips" aria-label="Parts">
+				<li>Microservices</li><li>Ruby</li><li>Rails</li><li>React</li><li>MySQL</li><li>Redis</li><li>AWS SQS</li><li>EC2</li><li>ECS</li><li>Sumo Logic</li>
+			</ul>
+		</article>
 
-			/* Give the small text links a tap target of at least 24px */
-			.div-projects .box > a:not(.image),
-			.div-projects .box p > a {
-				display: inline-block;
-				padding: 5px 0;
-				margin-right: 0.75em;
-			}
+		<article class="log" id="boardvitals" data-parts="ruby rails angularjs react javascript postgresql redis stripe">
+			<header class="log-head">
+				<h3>BoardVitals</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Software Engineer</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Full-stack features for an enterprise online learning platform for medical professionals and students.</p>
+			<dl class="log-stats">
+				<div><dt>Users</dt><dd class="num">100k → 200k</dd></div>
+				<div><dt>Outcome</dt><dd>Acquired</dd></div>
+			</dl>
+			<dl class="log-body">
+				<div><dt>Scaled</dt><dd>Supported the user base as it doubled, through to the company’s successful acquisition.</dd></div>
+				<div><dt>Migrated</dt><dd>Proposed and shipped the move from AngularJS to React to speed up page loads and raise conversions.</dd></div>
+				<div><dt>Payments</dt><dd>Built critical Stripe payment features, with a focus on accuracy, security and business continuity.</dd></div>
+			</dl>
+			<ul class="chips" aria-label="Parts">
+				<li>Ruby</li><li>Rails</li><li>AngularJS</li><li>React</li><li>PostgreSQL</li><li>Redis</li><li>Stripe</li>
+			</ul>
+		</article>
 
-			/* Mobile Fixes */
-			@media screen and (max-width: 736px) {
-				#top .row {
-					display: flex;
-					flex-direction: column;
-				}
-				#top .hero-content { order: 1; text-align: center; width: 100%; }
-				#top #three-container { 
-					order: 2; 
-					margin-top: 20px; 
-					height: 250px; 
-					width: 100%; 
-				}
-				header { text-align: center; }
-				#top header .tagline { font-size: 1.25em; }
-			}
-		</style>
 
-	</head>
-	<body>
+	</section>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="container">
-					<li><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#skills">Skills</a></li>
-					<li><a href="#about">About</a></li>
-					<!-- <li><a href="#contact">Contact</a></li> -->
+	<section class="section wrap" id="fundamentals" aria-labelledby="fundamentals-title">
+		<div class="section-head">
+			<h2 id="fundamentals-title">Fundamentals</h2>
+			<p>Earlier builds that each taught me one thing well.</p>
+		</div>
+
+		<div class="cards">
+			<article class="card" id="asteroids" data-parts="javascript canvas html-css">
+				<a class="card-media" href="https://parkjake.com/asteroids/" aria-label="Play Asteroids">
+					<video autoplay muted loop playsinline preload="none" width="800" height="478" poster="images/asteroids1-poster.webp" aria-label="Asteroids gameplay">
+						<source src="images/asteroids1.webm" type="video/webm" />
+						<source src="images/asteroids1.mp4" type="video/mp4" />
+					</video>
+				</a>
+				<h3>Asteroids</h3>
+				<p>Game physics from scratch: collision detection, inelastic bounces, and an enemy ship that targets and fires at you.</p>
+				<ul class="card-links">
+					<li><a href="https://parkjake.com/asteroids/">Play it</a></li>
+					<li><a href="https://github.com/jakepark/asteroids">Source</a></li>
 				</ul>
-			</nav>
+				<ul class="chips" aria-label="Parts"><li>JavaScript</li><li>Canvas</li></ul>
+			</article>
 
-		<!-- Home -->
-		<div class="wrapper style1 first">
-    <article class="container" id="top">
-        <div class="row" style="display: flex; align-items: center;">
-            <div class="4u 12u(mobile)">
-                <span class="image fit"><img src="images/jp-headshot.webp" alt="Jake Park" width="540" height="540" fetchpriority="high" /></span>
-            </div>
-            <div class="8u 12u(mobile)">
-							<header>
-									<h1><strong>Jake Park</strong></h1>
-									<h2 class="tagline">Software Developer</h2>
-							</header>
-							<div class="row">
-									<div class="7u 12u(mobile) hero-content">
-											<p>I build software with the same precision I used to rebuild my motorcycle’s engine. I treat the process of coding like mechanical design: I break down systems into components, understand the constraints, build and iterate.</p>
-											<footer>
-													<a href="https://www.linkedin.com/in/parkjake" class="button big scrolly">> Linked In</a>
-											</footer>
-									</div>
-									<div class="5u 12u(mobile)">
-											<div id="three-container" class="plane-canvas"></div>
-											<p class="p51-credit">
-												P-51D Model © Jake Park 2006
-											</p>
-									</div>
-							</div>
-					</div>
-        </div>
-    </article>
+			<article class="card" id="chess" data-parts="ruby">
+				<a class="card-media" href="https://github.com/jakepark/chess">
+					<img src="images/chess.webp" alt="Chess board drawn in the terminal" width="429" height="424" loading="lazy" />
+				</a>
+				<h3>Chess</h3>
+				<p>Two-player chess in the terminal. Moves are validated by trying them on a duplicate of the board first.</p>
+				<ul class="card-links">
+					<li><a href="https://github.com/jakepark/chess">Source</a></li>
+				</ul>
+				<ul class="chips" aria-label="Parts"><li>Ruby</li></ul>
+			</article>
+
+			<article class="card" id="ww2" data-parts="angularjs javascript threejs maya">
+				<a class="card-media" href="https://parkjake.com/ww2/app/index.html#/chapters">
+					<img src="images/ww2.webp" alt="Chapter index of the World War 2 history site" width="800" height="520" loading="lazy" />
+				</a>
+				<h3>World War 2: 1944</h3>
+				<p>An interactive history in the style of West Point’s Civil War books. When the P-51 first flew.</p>
+				<ul class="card-links">
+					<li><a href="https://parkjake.com/ww2/app/index.html#/chapters">Visit</a></li>
+					<li><a href="https://github.com/jakepark/ww2">Source</a></li>
+				</ul>
+				<ul class="chips" aria-label="Parts"><li>AngularJS</li><li>three.js</li><li>Maya</li></ul>
+			</article>
+		</div>
+	</section>
+
+	<section class="section wrap" id="about" aria-labelledby="about-title">
+		<div class="section-head">
+			<h2 id="about-title">About me</h2>
+		</div>
+		<ul class="about">
+			<li>I'm on a dance team and enjoy tossing ( and catching ) intrepid partners!</li>
+			<li>I’ve run two marathons: <span class="num">4:26</span> and <span class="num">4:06</span>.</li>
+			<li>The tallest mountain I’ve summited was <span class="num">10,000</span> feet.. struggling via bicycle.</li>
+		</ul>
+	</section>
+
+</main>
+
+	<aside class="section parts-panel" id="parts" aria-labelledby="parts-title">
+		<div class="section-head">
+			<h2 id="parts-title">Parts list</h2>
+			<p>Pick a part to see where I’ve used it.</p>
+		</div>
+		<p class="parts-status" data-parts-status aria-live="polite">No part selected.</p>
+
+		<div class="parts" data-parts-list>
+			<div class="parts-group">
+				<h3>Backend</h3>
+				<ul>
+					<li><button type="button" data-part="ruby">Ruby</button></li>
+					<li><button type="button" data-part="rails">Rails</button></li>
+					<li><button type="button" data-part="microservices">Microservices</button></li>
+					<li><button type="button" data-part="python">Python</button></li>
+					<li><button type="button" data-part="django">Django</button></li>
+					<li><button type="button" data-part="celery">Celery</button></li>
+					<li><button type="button" data-part="php">PHP</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Data</h3>
+				<ul>
+					<li><button type="button" data-part="postgresql">PostgreSQL</button></li>
+					<li><button type="button" data-part="mysql">MySQL</button></li>
+					<li><button type="button" data-part="redis">Redis</button></li>
+					<li><button type="button" data-part="dynamodb">DynamoDB</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Frontend</h3>
+				<ul>
+					<li><button type="button" data-part="javascript">JavaScript</button></li>
+					<li><button type="button" data-part="react">React</button></li>
+					<li><button type="button" data-part="angularjs">AngularJS</button></li>
+					<li><button type="button" data-part="threejs">three.js</button></li>
+					<li><button type="button" data-part="canvas">Canvas</button></li>
+					<li><button type="button" data-part="html-css">HTML &amp; CSS</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Cloud &amp; infrastructure</h3>
+				<ul>
+					<li><button type="button" data-part="aws">AWS</button></li>
+					<li><button type="button" data-part="sqs">SQS</button></li>
+					<li><button type="button" data-part="lambda">Lambda</button></li>
+					<li><button type="button" data-part="ec2">EC2</button></li>
+					<li><button type="button" data-part="ecs">ECS</button></li>
+					<li><button type="button" data-part="s3">S3</button></li>
+					<li><button type="button" data-part="eventbridge">EventBridge</button></li>
+					<li><button type="button" data-part="sns">SNS</button></li>
+					<li><button type="button" data-part="docker">Docker</button></li>
+					<li><button type="button" data-part="linux">Linux</button></li>
+					<li><button type="button" data-part="apache">Apache</button></li>
+				</ul>
+			</div>
+			<div class="parts-group">
+				<h3>Platforms &amp; tools</h3>
+				<ul>
+					<li><button type="button" data-part="stripe">Stripe</button></li>
+					<li><button type="button" data-part="sumo-logic">Sumo Logic</button></li>
+					<li><button type="button" data-part="omeka">Omeka</button></li>
+					<li><button type="button" data-part="maya">Maya</button></li>
+				</ul>
+			</div>
+		</div>
+		<p class="parts-also">Also used: Vue, Backbone, jQuery.</p>
+	</aside>
+
 </div>
 
-		<!-- Portfolio -->
-			<div class="wrapper style3">
-				<article id="portfolio">
-					<header>
-						<h2>Software Projects</h2>
+<footer class="footer">
+	<div class="wrap footer-inner">
+		<p>P-51D model © Jake Park 2006.</p>
+		<ul class="contact">
+			<li><a href="https://github.com/jakepark">GitHub</a></li>
+			<li><a href="https://www.linkedin.com/in/parkjake">LinkedIn</a></li>
+			<li><a href="resume.pdf">Résumé</a></li>
+			<li><a href="mailto:jake@parkjake.com">Email</a></li>
+		</ul>
+	</div>
+</footer>
 
-					</header>
-					<div class="container">
-						<div class="row">
-
-							<div class="div-projects">
-								<article class="box style2">
-									<a href="http://parkjake.com/asteroids/"
-										class="image featured" aria-label="Play Asteroids">
-										<video autoplay muted loop playsinline preload="none" width="800" height="478"
-											poster="./images/asteroids1-poster.webp" aria-label="Asteroids gameplay">
-											<source src="./images/asteroids1.webm" type="video/webm" />
-											<source src="./images/asteroids1.mp4" type="video/mp4" />
-										</video>
-									</a>
-									<h3><a href="http://parkjake.com/asteroids/">Asteroids!</a></h3>
-									<p>A Javascript re-imagining of classic Asteroids gameplay</p>
-									<a href="http://parkjake.com/asteroids/">Live</a>
-									<a href="http://www.github.com/jakepark/asteroids">Github</a>
-									<ul class = 'div-projects-list'>
-										<li>- Intuitive movement and shooting controls</li>
-										<li>- AI controlled enemy targets and fires at player</li>
-										<li>- Collision detection and resolution for all objects in scene</li>
-										<li>- Inelastic collisions allow for fun physics-based movement</li>
-										<li>- Objects textured with sprite maps against a stellar backdrop</li>
-									</ul>
-								</article>
-							</div>
-
-							<div class="div-projects">
-								<article class="box style2">
-									<a href="http://myfacebook.parkjake.com"
-									 	class="image featured">
-									 	<img src="./images/myfacebook.webp" alt="myFacebook profile page" width="800" height="478" loading="lazy" />
-									</a>
-									<h3><a href="http://myfacebook.parkjake.com">myFacebook</a></h3>
-									<p>A Backbone.js web app inspired by Facebook</p>
-									<!-- <a href="http://myfacebook.parkjake.com">Live</a> -->
-									<a href="http://www.github.com/jakepark/myfacebook">Github</a>
-									<ul class = 'div-projects-list'>
-										<li>- Single page app prefetches content for quick page navigation</li>
-										<li>- Self-Join table and single request SQL queries permit follower
-											model required for authorization of profile views</li>
-										<li>- User privacy requires authorization of friendship requests</li>
-										<li>- Omniauth allows quick user authentication via Twitter accounts</li>
-									</ul>
-								</article>
-							</div>
-
-							<div class="div-projects">
-								<article class="box style2">
-									<a href="http://parkjake.com/ww2/app/index.html#/chapters" class="image featured"><img src="./images/ww2.webp" alt="The (abridged) History of World War 2 chapter index" width="800" height="520" loading="lazy" /></a>
-									<h3><a href="http://parkjake.com/ww2/app/index.html#/chapters">The (abridged) History of World War 2: 1944</a></h3>
-									<p>An AngularJS site modeled on Rowan Technology's</p>
-									<p><a href="http://www.westpointhistoryofwarfare.com">West Point History of the Civil War</a></p>
-									<a href="http://www.github.com/jakepark/ww2">Github</a>
-									<ul class = 'div-projects-list'>
-										<li>- Custom Angular directives for image modal overlays for easy page navigation</li>
-										<li>- Incorporated Three.js library for 3D model object display</li>
-										<li>- North American P51D modeled in Maya</li>
-								</article>
-							</div>
-
-							<div class="div-projects">
-								<article class="box style2">
-									<a href="http://www.github.com/jakepark/chess" class="image featured"><img src="./images/chess.webp" alt="Chess board in the terminal" width="429" height="424" loading="lazy" /></a>
-									<h3><a href="http://www.github.com/jakepark/chess">Chess</a></h3>
-									<a href="http://www.github.com/jakepark/chess">Github</a>
-									<ul class = 'div-projects-list'>
-										<li>- A fully-featured two player chess played in the command line</li>
-										<li>- Multi-level class inheritance structure</li>
-										<li>- Move validation via board state duplication</li>
-								</article>
-							</div>
-
-						</div>
-
-
-
-					</div>
-
-        </article>
-			</div>
-
-    <!-- Skills -->
-			<div class="wrapper style2">
-				<article id="skills">
-
-					<header>
-						<h2>Here are some of the technologies I work with.</h2>
-						<p>(so far)</p>
-					</header>
-					<div class="flex-container">
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/js.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>JavaScript</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/react.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>React</h3>
-              </section>
-            </div>
-            
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/vue.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>Vue</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/angular.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>Angular</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/backbone.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>Backbone</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/jquery.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>jQuery</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/ruby.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>Ruby</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/rails.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>Rails</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/html-5.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>HTML5</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/css.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>CSS</h3>
-              </section>
-            </div>
-
-            <div class="div-skills">
-              <section class="box style1">
-                <img class="icon featured" src="./images/skills/postgresql.webp" alt="" width="100" height="100" loading="lazy">
-                <h3>SQL</h3>
-              </section>
-            </div>
-
-        </article>
-      </div>
-      
-		<!-- About -->
-    <div class="wrapper">
-      <article class="container" id="about">
-        <div class="row">
-          <div class="12u 12u(mobile)">
-            <h1><strong>About Me</strong></h1>
-            
-            <ul>
-              <li>
-                I love to dance like nobody's watching.
-              </li>
-              <li>
-                I've run two marathons (so far) : [ 4:26, 4:06 ]
-              </li>
-              <li>
-                The tallest mountain I've summited was 10,000 feet - by bicycle!
-              </li>
-            </ul>
-          </div>
-        </div>
-      </article>
-    </div>
-
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/skel-viewport.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			<!-- Load the 3D P-51 only after the page has loaded and the plane is on screen,
-			     so it never holds up the first paint. The static p51.png shows until then. -->
-			<script>
-				(function () {
-					var container = document.getElementById('three-container');
-					if (!container) return;
-
-					var scripts = [
-						'assets/js/threejs/three.min.js',
-						'assets/js/threejs/DDSLoader.js',
-						'assets/js/threejs/MTLLoader.js',
-						'assets/js/threejs/OBJMTLLoader.js',
-						'assets/js/threejs/TrackballControls.js',
-						'assets/js/p51.js'
-					];
-
-					function loadNext(i) {
-						if (i >= scripts.length) return;
-						var s = document.createElement('script');
-						s.src = scripts[i];
-						s.onload = function () { loadNext(i + 1); };
-						document.body.appendChild(s);
-					}
-
-					function startWhenVisible() {
-						if (!('IntersectionObserver' in window)) return loadNext(0);
-						var observer = new IntersectionObserver(function (entries) {
-							if (!entries[0].isIntersecting) return;
-							observer.disconnect();
-							loadNext(0);
-						});
-						observer.observe(container);
-					}
-
-					window.addEventListener('load', function () {
-						if ('requestIdleCallback' in window) {
-							window.requestIdleCallback(startWhenVisible, { timeout: 2000 });
-						} else {
-							setTimeout(startWhenVisible, 0);
-						}
-					});
-				})();
-			</script>
-
-	</body>
+<script src="assets/js/site.js" defer></script>
+</body>
 </html>

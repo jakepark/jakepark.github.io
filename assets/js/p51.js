@@ -1,111 +1,139 @@
-var p51_container, p51_camera, p51_scene, p51_renderer, p51_controls;
+// The P-51 wireframe, drawn with three.js and TrackballControls: drag to rotate,
+// scroll or pinch to zoom, right-drag to pan. The model is baked ahead of time by
+// tools/build_wireframe.py, so there's no OBJ to parse in the browser.
+(function () {
+    var stage = document.querySelector('[data-p51]');
+    if (!stage || !window.THREE || !window.P51_WIRE) return;
 
-// Only render while the model is being moved. A few trailing frames let
-// TrackballControls apply wheel zooms, which fire start and end together.
-var p51_dragging = false;
-var p51_running = false;
-var p51_idleFrames = 0;
-var P51_TRAILING_FRAMES = 30;
+    // Only render while the model is moving. A few trailing frames let
+    // TrackballControls apply wheel zooms, which fire start and end together.
+    var TRAILING_FRAMES = 30;
+    var dragging = false;
+    var running = false;
+    var idleFrames = 0;
 
-initP51();
+    var camera = new THREE.PerspectiveCamera(45, stage.clientWidth / stage.clientHeight, 1, 2000);
+    camera.position.set(25, 25, 25);
 
-function initP51() {
-    p51_container = document.getElementById('three-container');
-    if (!p51_container) return;
+    var scene = new THREE.Scene();
+    var material = new THREE.LineBasicMaterial({ color: wireColor(), transparent: true, opacity: 0.3 });
 
-    var w = p51_container.offsetWidth;
-    var h = p51_container.offsetHeight;
+    var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setSize(stage.clientWidth, stage.clientHeight);
 
-    p51_camera = new THREE.PerspectiveCamera(45, w / h, 1, 2000);
-    p51_camera.position.set(25, 25, 25);
+    var model = decode(base64ToBuffer(window.P51_WIRE));
+    var geometry = new THREE.BufferGeometry();
+    geometry.addAttribute('position', new THREE.BufferAttribute(model.positions, 3));
+    geometry.setIndex(new THREE.BufferAttribute(model.indices, 1));
+    scene.add(new THREE.LineSegments(geometry, material));
 
-    p51_scene = new THREE.Scene();
+    var canvas = renderer.domElement;
+    canvas.setAttribute('role', 'img');
+    canvas.setAttribute('aria-label', 'P-51D Mustang wireframe. Drag to rotate, scroll to zoom.');
+    stage.appendChild(canvas);
 
-    // Lights
-    var ambient = new THREE.AmbientLight(0x666666);
-    p51_scene.add(ambient);
+    var controls = new THREE.TrackballControls(camera, canvas);
+    controls.staticMoving = true;
+    controls.addEventListener('start', function () { dragging = true; wake(); });
+    controls.addEventListener('end', function () { dragging = false; wake(); });
 
-    var directionalLight = new THREE.DirectionalLight(0xffeedd);
-    directionalLight.position.set(0, 70, 100).normalize();
-    p51_scene.add(directionalLight);
+    bindResize();
+    render();
+    stage.classList.add('is-live');
 
-    p51_renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    p51_renderer.setSize(w, h);
-    p51_container.appendChild(p51_renderer.domElement);
-
-    p51_controls = new THREE.TrackballControls(p51_camera, p51_renderer.domElement);
-    p51_controls.staticMoving = true;
-    p51_controls.addEventListener('start', function () { p51_dragging = true; wakeP51(); });
-    p51_controls.addEventListener('end', function () { p51_dragging = false; wakeP51(); });
-
-    var loader = new THREE.OBJMTLLoader();
-    loader.load(
-        'assets/models/p51/p51.obj',
-        'assets/models/p51/p51.mtl',
-        function (object) {
-            object.traverse(function (child) {
-                if (child instanceof THREE.Mesh) {
-                    // 1. Create the wireframe geometry
-                    var wireframeGeom = new THREE.WireframeGeometry(child.geometry);
-
-                    // 2. Set the color to a "Tech Blue" (0x0077ff)
-                    var wireframeMat = new THREE.LineBasicMaterial({
-                        color: 0x0077ff,
-                        transparent: true,
-                        opacity: 0.3 // Adjust from 0.1 (very light) to 1.0 (solid)
-                    });
-                    var wireframe = new THREE.LineSegments(wireframeGeom, wireframeMat);
-
-                    // 3. Add the wireframe to the mesh
-                    child.add(wireframe);
-
-                    // 4. HIDE the original painted surface
-                    child.material.visible = false;
-                }
-            });
-            object.position.y = 0;
-            object.scale.set(1.0, 1.0, 1.0);
-            p51_scene.add(object);
-            renderP51();
-
-            // This removes the static image and fades in the 3D canvas
-            document.getElementById('three-container').classList.add('model-loaded');
-        }
-    );
-
-    window.addEventListener('resize', onP51WindowResize, false);
-    renderP51();
-}
-
-function onP51WindowResize() {
-    var w = p51_container.offsetWidth;
-    var h = p51_container.offsetHeight;
-    p51_camera.aspect = w / h;
-    p51_camera.updateProjectionMatrix();
-    p51_renderer.setSize(w, h);
-    p51_controls.handleResize();
-    renderP51();
-}
-
-function wakeP51() {
-    p51_idleFrames = 0;
-    if (p51_running) return;
-    p51_running = true;
-    requestAnimationFrame(animateP51);
-}
-
-function animateP51() {
-    p51_controls.update();
-    renderP51();
-
-    if (p51_dragging || ++p51_idleFrames < P51_TRAILING_FRAMES) {
-        requestAnimationFrame(animateP51);
-    } else {
-        p51_running = false;
+    function base64ToBuffer(text) {
+        var binary = atob(text);
+        var bytes = new Uint8Array(binary.length);
+        for (var i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+        return bytes.buffer;
     }
-}
 
-function renderP51() {
-    p51_camera.lookAt(p51_scene.position);
-    p51_renderer.render(p51_scene, p51_camera);
-}
+    // See tools/build_wireframe.py for the file layout.
+    function decode(buffer) {
+        var view = new DataView(buffer);
+        var vertexCount = view.getUint32(4, true);
+        var segments = view.getUint32(8, true);
+        var lo = [], span = [];
+        for (var i = 0; i < 3; i++) {
+            lo[i] = view.getFloat32(12 + i * 4, true);
+            span[i] = view.getFloat32(24 + i * 4, true) - lo[i];
+        }
+
+        var positions = new Float32Array(vertexCount * 3);
+        var offset = 36;
+        for (var v = 0; v < vertexCount * 3; v++, offset += 2) {
+            positions[v] = lo[v % 3] + view.getUint16(offset, true) / 65535 * span[v % 3];
+        }
+
+        var bytes = new Uint8Array(buffer, offset);
+        var indices = new Uint16Array(segments * 2);
+        var cursor = 0;
+        var a = 0;
+        function readVarint() {
+            var value = 0, shift = 0, b;
+            do {
+                b = bytes[cursor++];
+                value |= (b & 0x7f) << shift;
+                shift += 7;
+            } while (b & 0x80);
+            return value;
+        }
+        for (var s = 0; s < segments; s++) {
+            a += readVarint();
+            indices[s * 2] = a;
+            indices[s * 2 + 1] = a + readVarint();
+        }
+        return { positions: positions, indices: indices };
+    }
+
+    function wireColor() {
+        var rgb = getComputedStyle(stage).getPropertyValue('--wire').trim().split(/\s+/).map(Number);
+        return rgb.length === 3 ? new THREE.Color(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255) : new THREE.Color(0x0077ff);
+    }
+
+    function wake() {
+        idleFrames = 0;
+        if (running) return;
+        running = true;
+        requestAnimationFrame(animate);
+    }
+
+    function animate() {
+        controls.update();
+        render();
+        if (dragging || ++idleFrames < TRAILING_FRAMES) {
+            requestAnimationFrame(animate);
+        } else {
+            running = false;
+        }
+    }
+
+    function render() {
+        camera.lookAt(scene.position);
+        renderer.render(scene, camera);
+    }
+
+    function bindResize() {
+        function resize() {
+            camera.aspect = stage.clientWidth / stage.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(stage.clientWidth, stage.clientHeight);
+            controls.handleResize();
+            render();
+        }
+        if ('ResizeObserver' in window) new ResizeObserver(resize).observe(stage);
+        else window.addEventListener('resize', resize);
+
+        // Switch to the other theme's line color when the system goes light/dark.
+        if (window.matchMedia) {
+            var scheme = window.matchMedia('(prefers-color-scheme: dark)');
+            if (scheme.addEventListener) {
+                scheme.addEventListener('change', function () {
+                    material.color = wireColor();
+                    render();
+                });
+            }
+        }
+    }
+})();
