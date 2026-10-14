@@ -38,10 +38,13 @@
                 show(pinned);
             });
             button.addEventListener('mouseenter', function () { show(button); });
-            button.addEventListener('mouseleave', function () { show(pinned); });
             button.addEventListener('focus', function () { show(button); });
             button.addEventListener('blur', function () { show(pinned); });
         });
+
+        // Reset only when the mouse leaves the whole list, so moving between
+        // parts never flashes back to the pinned (or empty) state.
+        list.addEventListener('mouseleave', function () { show(pinned); });
 
         function buildsUsing(part) {
             return builds.filter(function (b) {
