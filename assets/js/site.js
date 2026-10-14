@@ -14,6 +14,15 @@
         var buttons = Array.prototype.slice.call(list.querySelectorAll('[data-part]'));
         var pinned = null;
 
+        // A data-parts tag only shows up if the parts list has a button for it.
+        builds.forEach(function (b) {
+            b.getAttribute('data-parts').split(/\s+/).forEach(function (part) {
+                if (!list.querySelector('[data-part="' + part + '"]')) {
+                    console.warn('Parts list has no button for "' + part + '" (used by #' + b.id + ')');
+                }
+            });
+        });
+
         buttons.forEach(function (button, i) {
             var users = buildsUsing(button.getAttribute('data-part'));
             var name = button.textContent;

@@ -21,7 +21,6 @@
 			<li><a href="#work">Work</a></li>
 			<li><a href="#parts">Parts</a></li>
 			<li><a href="#fundamentals">Fundamentals</a></li>
-			<li><a href="#garage">Garage</a></li>
 			<li><a href="#about">About</a></li>
 		</ul>
 	</div>
@@ -101,28 +100,28 @@
 			</ul>
 		</article>
 
-		<article class="log" id="medidata" data-parts="ruby rails react javascript mysql redis aws sqs sumo-logic">
+		<article class="log" id="medidata" data-parts="ruby rails react javascript mysql redis aws sumo-logic sqs ec2 ecs microservices">
 			<header class="log-head">
 				<h3>Medidata</h3>
 				<dl class="log-meta">
 					<div><dt>Role</dt><dd>Applications Engineer</dd></div>
 				</dl>
 			</header>
-			<p class="log-summary">Led full-stack development of Study Transfer, the deliverable for a new enterprise contract.</p>
+			<p class="log-summary">Built and ran features across a microservice ecosystem, and led full-stack development of Study Transfer, the deliverable for a new enterprise contract.</p>
 			<dl class="log-stats">
 				<div><dt>Contract value</dt><dd class="num">$1M</dd></div>
 				<div><dt>Teams integrated</dt><dd class="num">3+</dd></div>
 			</dl>
 			<dl class="log-body">
-				<div><dt>Planned</dt><dd>Owned roadmap planning with senior PMs, prioritizing features around regulatory and user workflow needs.</dd></div>
-				<div><dt>Integrated</dt><dd>Worked across three or more engineering teams to integrate tightly with iMedidata, Rave and CTMS.</dd></div>
-				<div><dt>Built</dt><dd>Features in a microservice ecosystem using Rails, React, and background jobs on AWS SQS.</dd></div>
-				<div><dt>Tooled</dt><dd>An internal CLI that validates database state in CI, making tests more reliable and debugging faster.</dd></div>
+				<div><dt>Built</dt><dd>Features across a microservice ecosystem: Rails services, React frontends, and background jobs on AWS SQS, running on EC2 and ECS.</dd></div>
+				<div><dt>Integrated</dt><dd>Worked with three or more engineering teams across the platform to keep services tightly integrated with iMedidata, Rave and CTMS.</dd></div>
 				<div><dt>Monitored</dt><dd>A heartbeat system for application workers, feeding a metrics dashboard in Sumo Logic.</dd></div>
+				<div><dt>Tooled</dt><dd>An internal CLI that validates database state in CI, making tests more reliable and debugging faster.</dd></div>
 				<div><dt>On call</dt><dd>Rotated as on-call tech lead, responding to and documenting high-severity production incidents across multiple systems.</dd></div>
+				<div><dt>Planned</dt><dd>Owned roadmap planning with senior PMs, prioritizing features around regulatory and user workflow needs.</dd></div>
 			</dl>
 			<ul class="chips" aria-label="Parts">
-				<li>Ruby</li><li>Rails</li><li>React</li><li>MySQL</li><li>Redis</li><li>AWS SQS</li><li>Sumo Logic</li>
+				<li>Microservices</li><li>Ruby</li><li>Rails</li><li>React</li><li>MySQL</li><li>Redis</li><li>AWS SQS</li><li>EC2</li><li>ECS</li><li>Sumo Logic</li>
 			</ul>
 		</article>
 
@@ -206,7 +205,7 @@
 					<img src="images/ww2.webp" alt="Chapter index of the World War 2 history site" width="800" height="520" loading="lazy" />
 				</a>
 				<h3>World War 2: 1944</h3>
-				<p>An interactive history in the style of West Point’s Civil War books. This is where the P-51 above first flew.</p>
+				<p>An interactive history in the style of West Point’s Civil War books. When the P-51 first flew.</p>
 				<ul class="card-links">
 					<li><a href="https://parkjake.com/ww2/app/index.html#/chapters">Visit</a></li>
 					<li><a href="https://github.com/jakepark/ww2">Source</a></li>
@@ -216,30 +215,14 @@
 		</div>
 	</section>
 
-	<section class="section wrap" id="garage" aria-labelledby="garage-title">
-		<div class="section-head">
-			<h2 id="garage-title">In the garage</h2>
-			<p>A 2010 Kawasaki Ninja 250. I rebuilt the engine and still ride it. Slide to go from teardown to finished bike.</p>
-		</div>
-
-		<!-- TODO(content): add images/garage/engine.webp and images/garage/bike.webp, same size and ideally the same angle -->
-		<div class="reveal" data-reveal style="--pos: 50%">
-			<img class="reveal-before" src="images/garage/engine.webp" alt="The Ninja 250 engine taken apart on the bench" width="1200" height="800" loading="lazy" />
-			<img class="reveal-after" src="images/garage/bike.webp" alt="The restored Ninja 250" width="1200" height="800" loading="lazy" />
-			<p class="reveal-empty">Photos coming soon: the engine teardown and the finished bike.</p>
-			<label class="visually-hidden" for="reveal-slider">Teardown to finished bike</label>
-			<input id="reveal-slider" type="range" min="0" max="100" value="50" />
-		</div>
-	</section>
-
 	<section class="section wrap" id="about" aria-labelledby="about-title">
 		<div class="section-head">
 			<h2 id="about-title">About me</h2>
 		</div>
 		<ul class="about">
-			<li>I love to dance like nobody’s watching.</li>
-			<li>I’ve run two marathons so far: <span class="num">4:26</span> and <span class="num">4:06</span>.</li>
-			<li>The tallest mountain I’ve summited was <span class="num">10,000</span> feet, by bicycle.</li>
+			<li>I'm on a dance team and enjoy tossing ( and catching ) intrepid partners!</li>
+			<li>I’ve run two marathons: <span class="num">4:26</span> and <span class="num">4:06</span>.</li>
+			<li>The tallest mountain I’ve summited was <span class="num">10,000</span> feet.. struggling via bicycle.</li>
 		</ul>
 	</section>
 
@@ -258,6 +241,7 @@
 				<ul>
 					<li><button type="button" data-part="ruby">Ruby</button></li>
 					<li><button type="button" data-part="rails">Rails</button></li>
+					<li><button type="button" data-part="microservices">Microservices</button></li>
 					<li><button type="button" data-part="python">Python</button></li>
 					<li><button type="button" data-part="django">Django</button></li>
 					<li><button type="button" data-part="celery">Celery</button></li>
@@ -291,6 +275,7 @@
 					<li><button type="button" data-part="sqs">SQS</button></li>
 					<li><button type="button" data-part="lambda">Lambda</button></li>
 					<li><button type="button" data-part="ec2">EC2</button></li>
+					<li><button type="button" data-part="ecs">ECS</button></li>
 					<li><button type="button" data-part="s3">S3</button></li>
 					<li><button type="button" data-part="eventbridge">EventBridge</button></li>
 					<li><button type="button" data-part="sns">SNS</button></li>
@@ -316,7 +301,7 @@
 
 <footer class="footer">
 	<div class="wrap footer-inner">
-		<p>Built by hand, with no framework. P-51D model © Jake Park 2006.</p>
+		<p>P-51D model © Jake Park 2006.</p>
 		<ul class="contact">
 			<li><a href="https://github.com/jakepark">GitHub</a></li>
 			<li><a href="https://www.linkedin.com/in/parkjake">LinkedIn</a></li>
