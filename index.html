@@ -18,7 +18,7 @@
 <nav class="topbar" aria-label="Sections">
 	<div class="wrap topbar-inner">
 		<ul>
-			<li><a href="#work">Work</a></li>
+			<li><a href="#work">Recent</a></li>
 			<li><a href="#parts">Parts</a></li>
 			<li><a href="#fundamentals">Fundamentals</a></li>
 			<li><a href="#about">About</a></li>
@@ -60,25 +60,32 @@
 
 	<section class="section wrap" id="work" aria-labelledby="work-title">
 		<div class="section-head">
-			<h2 id="work-title">Work</h2>
-			<p>Each entry reads like a build log: the job, the parts, and what came out.</p>
+			<h2 id="work-title">Recent</h2>
+			
 		</div>
+
+		<article class="log" id="aws-coursework" data-parts="aws ec2 s3 lambda dynamodb eventbridge sns linux apache mysql php">
+			<header class="log-head">
+				<h3>AWS and LAMP coursework</h3>
+				<dl class="log-meta">
+					<div><dt>Role</dt><dd>Student, Queensborough Community College</dd></div>
+				</dl>
+			</header>
+			<p class="log-summary">Coursework including LAMP stack and serverless AWS services.</p>
+			<ul class="chips" aria-label="Parts">
+				<li>Linux</li><li>Apache</li><li>MySQL</li><li>PHP</li><li>EC2</li><li>S3</li><li>Lambda</li><li>DynamoDB</li><li>EventBridge</li><li>SNS</li>
+			</ul>
+		</article>
 
 		<article class="log" id="dance-story" data-parts="omeka">
 			<header class="log-head">
 				<h3>Dance Story</h3>
 				<dl class="log-meta">
 					<div><dt>Role</dt><dd>Contract developer</dd></div>
-					<div><dt>Status</dt><dd><span class="status">Not yet launched</span></dd></div>
+					<div><dt>Status</dt><dd><span class="status">Launches 2027</span></dd></div>
 				</dl>
 			</header>
-			<p class="log-summary">Integrating an Omeka archive for Dance Story.</p>
-			<dl class="log-body">
-				<div><dt>Starting point</dt><dd class="todo">Waiting on notes from Jake: what the client had before.</dd></div>
-				<div><dt>Constraints</dt><dd class="todo">Waiting on notes: what the client needed and what made it hard.</dd></div>
-				<div><dt>Build</dt><dd class="todo">Waiting on notes: what was built and the hardest problem.</dd></div>
-				<div><dt>Result</dt><dd class="todo">Waiting on notes: what it does now, archive size, record types.</dd></div>
-			</dl>
+			<p class="log-summary">Integrating an archival system for historians and archivists</p>
 			<ul class="chips" aria-label="Parts"><li>Omeka</li></ul>
 		</article>
 
@@ -109,7 +116,7 @@
 			</header>
 			<p class="log-summary">Built and ran features across a microservice ecosystem, and led full-stack development of Study Transfer, the deliverable for a new enterprise contract.</p>
 			<dl class="log-stats">
-				<div><dt>Contract value</dt><dd class="num">$1M</dd></div>
+				<div><dt>Contract value</dt><dd class="num">$1M+</dd></div>
 				<div><dt>Teams integrated</dt><dd class="num">3+</dd></div>
 			</dl>
 			<dl class="log-body">
@@ -147,21 +154,6 @@
 			</ul>
 		</article>
 
-		<article class="log" id="aws-coursework" data-parts="aws ec2 s3 lambda dynamodb eventbridge sns linux apache mysql php">
-			<header class="log-head">
-				<h3>AWS and LAMP coursework</h3>
-				<dl class="log-meta">
-					<div><dt>Role</dt><dd>Student, Queensborough Community College</dd></div>
-				</dl>
-			</header>
-			<p class="log-summary">Night classes covering a LAMP stack and serverless AWS services.</p>
-			<dl class="log-body">
-				<div><dt>Build</dt><dd class="todo">Waiting on notes: what the class projects actually did. If the code is on GitHub, link it here.</dd></div>
-			</dl>
-			<ul class="chips" aria-label="Parts">
-				<li>Linux</li><li>Apache</li><li>MySQL</li><li>PHP</li><li>EC2</li><li>S3</li><li>Lambda</li><li>DynamoDB</li><li>EventBridge</li><li>SNS</li>
-			</ul>
-		</article>
 
 	</section>
 
